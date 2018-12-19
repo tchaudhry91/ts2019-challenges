@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  labels:
+    app: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: localhost:32000/oleksiimy/server:0.1
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: /etc/nginx
+            readOnly: true
+            name: nginx
+      - name: client
+        image: localhost:32000/oleksiimy/client:0.1
+      volumes:
+      - name: nginx
+        configMap:
+          name: server
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+
