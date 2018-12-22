@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: monkey-victim
+  namespace: smart-a-app
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: monkey-victim
+    kube-monkey/mtbf: '1'
+    kube-monkey/kill-mode: "fixed-percent"
+    kube-monkey/kill-value: "20"
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: monkey-victim
+  template:
+    metadata:
+      labels:
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: monkey-victim
+        name: monkey-victim
+        kube-monkey/mtbf: '1'
+        kube-monkey/kill-mode: "fixed-percent"
+        kube-monkey/kill-value: "20"
+    spec:
+      containers:
+      - name: monkey-victim
+        image: saykumar/ts2019:s1
+        resources:
+          limits:
+            memory: 70Mi
+          requests:
+            cpu: 100m
+            memory: 45Mi
