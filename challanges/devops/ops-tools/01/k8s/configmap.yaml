@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server
+data:
+  nginx.conf: |
+    events {
+      worker_connections  1024;
+    }
+    http {
+      server {
+          listen       80;
+          server_name  _;
+          location / {
+            root /usr/share/nginx/html;
+          }
+      }
+    }

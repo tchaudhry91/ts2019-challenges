@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  labels:
+    app: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webserver
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+      - name: webserver01
+        image: localhost:32000/nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: /etc/nginx
+            readOnly: true
+            name: nginx
+      - name: jenkins01
+        image: localhost:32000/jenkins/jenkins:lts
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: nginx
+        configMap:
+          name: nginx-jenkins-v01
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+

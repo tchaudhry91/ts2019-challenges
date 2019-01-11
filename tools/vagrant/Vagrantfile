@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.box_check_update = false
+  # enable for testing
+  # k8s NodePorts will be avalable on this IP from host system
+  #config.vm.network "private_network", ip: "192.168.33.11"
+
+   config.vm.provider "virtualbox" do |vb|
+     vb.gui = false
+     vb.memory = "4096"
+     vb.cpus = "4"
+   end
+  config.vm.provision "shell", path: "provision_scripts/setup_k8s.sh"
+  config.vm.provision "shell", path: "provision_scripts/create_local_registry.sh"
+end
