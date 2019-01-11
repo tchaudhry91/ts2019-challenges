@@ -1,0 +1,11 @@
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  - job_name: 'hasher-blue'
+    static_configs:
+    - targets: ['hasher-blue-svc:8080']
+  - job_name: 'hasher-red'
+    static_configs:
+    - targets: ['hasher-red-svc:8080']

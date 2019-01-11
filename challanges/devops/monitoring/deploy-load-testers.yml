@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-load-deployment
+  labels:
+    app: blue-load
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blue-load
+  template:
+    metadata:
+      labels:
+        app: blue-load
+    spec:
+      containers:
+        - name: blue-load
+          image: tchaudhry/simple-http-load:master 
+          args: ["http://hasher-blue-svc:8080/hash?s=test"]
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red-load-deployment
+  labels:
+    app: red-load
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: red-load
+  template:
+    metadata:
+      labels:
+        app: red-load
+    spec:
+      containers:
+        - name: red-load
+          image: tchaudhry/simple-http-load:master 
+          args: ["http://hasher-red-svc:8080/hash?s=test"]

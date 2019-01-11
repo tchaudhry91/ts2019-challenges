@@ -1,0 +1,78 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ts2019-mon
+  labels:
+    name: ts2019
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hasher-blue-deployment
+  labels:
+    app: hasher-blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hasher-blue
+  template:
+    metadata:
+      labels:
+        app: hasher-blue
+    spec:
+      containers:
+        - name: hasher-blue
+          image: tchaudhry/hash-svc:ts2019blue
+          imagePullPolicy: Always
+        
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hasher-red-deployment
+  labels:
+    app: hasher-red
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hasher-red
+  template:
+    metadata:
+      labels:
+        app: hasher-red
+    spec:
+      containers:
+        - name: hasher-red
+          image: tchaudhry/hash-svc:ts2019red
+          imagePullPolicy: Always
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hasher-blue-svc
+spec:
+  selector:
+    app: hasher-blue
+  ports:
+  - protocol: TCP
+    name: hasher-blue
+    port: 8080
+    targetPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hasher-red-svc
+spec:
+  selector:
+    app: hasher-red
+  ports:
+  - protocol: TCP
+    name: hasher-red
+    port: 8080
+    targetPort: 8080
