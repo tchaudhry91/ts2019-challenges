@@ -36,6 +36,7 @@ System will be ready to use after completing these steps. Now user can start pla
 ### Creating/Updating new box
 
 ```cd ts2019-challenges/tools/vagrant/```
+
 ```./create_box.sh```
 
 
