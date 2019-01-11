@@ -24,7 +24,8 @@ This file should be distributed to computers and following steps are required to
    User vagrant
    IdentityFile ~/.vagrant.d/boxes/laptop/0/virtualbox/vagrant_private_key
    Hostname 192.168.33.10
-   Port 22```
+   Port 22
+```
 
 System will be ready to use after completing these steps. Now user can start playing with kubernetes:
 
