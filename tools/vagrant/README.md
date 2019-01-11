@@ -16,13 +16,20 @@ After completing this guide you will have laptop.box file.
 This file should be distributed to computers and following steps are required to install it:
 
 1. `vagrant box add laptop.box --name laptop`
-2. in different terminal `git clone https://github.com/alekseymykhailov/ts2019-challenges.git` and cd to the repo dir
+2. `git clone https://github.com/alekseymykhailov/ts2019-challenges.git` 
+3. cd to the repo dir
 3. `vagrant up`
+4. modify ~/.ssh/config to add this at top
+```Host devops
+   User vagrant
+   IdentityFile ~/.vagrant.d/boxes/laptop/0/virtualbox/vagrant_private_key
+   Hostname 192.168.33.10
+   Port 22```
 
 System will be ready to use after completing these steps. Now user can start playing with kubernetes:
 
-1. Login to the vagrant box `vagrant ssh laptop` 
-2. run `kubectl` commads inside vagrant box
+1. Login to the vagrant box, `ssh devops` 
+2. `cd /vagrant/challanges/devops/<challenge name>`, following instructions of challengs
 3. When VM is no longer required , adminstrator run `vagrant destroy` and deploy new VM for next user `vagrant up`
 
 ### Creating/Updating new box
@@ -52,11 +59,6 @@ Create new vagrant project
 mkdir /tmp/laptop && cd /tmp/laptop
 vagrant init laptop
 ```
-
-update new Vagrantfile with:
-`config.vm.network "private_network", ip: "192.168.33.11"`
-
-NOTE: **192.168.33.11** IP should not conflict with local network. Change it if necessary
 
 k8s NodePorts will be avalable on this IP from host system
 
@@ -110,7 +112,7 @@ cd /vagrant/test_app/
 ./start.sh
 ```
 
-Open [http://192.168.33.11:31193/](http://192.168.33.11:31193/) in your browser
+Open [http://192.168.33.10:31193/](http://192.168.33.10:31193/) in your browser
 
 Cleanup
 ```
