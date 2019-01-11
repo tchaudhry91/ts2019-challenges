@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: monkey-victim
-        image: saykumar/ts2019:s1
+        image: localhost:32000/saykumar/ts2019:s1
         resources:
           limits:
             memory: 70Mi
