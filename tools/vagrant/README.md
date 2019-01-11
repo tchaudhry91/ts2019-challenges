@@ -16,20 +16,14 @@ After completing this guide you will have laptop.box file.
 This file should be distributed to computers and following steps are required to install it:
 
 1. `vagrant box add laptop.box --name laptop`
-2. `vagrant init laptop`
-3. update new Vagrantfile with: 
-
-    `config.vm.network "private_network", ip: "192.168.33.11"`
-    
-    Where 192.168.33.11 is IP address that does not conflict with local network where vagrnt deployed
-4. `vagrant up`
+2. in different terminal `git clone https://github.com/alekseymykhailov/ts2019-challenges.git` and cd to the repo dir
+3. `vagrant up`
 
 System will be ready to use after completing these steps. Now user can start playing with kubernetes:
 
 1. Login to the vagrant box `vagrant ssh laptop` 
 2. run `kubectl` commads inside vagrant box
 3. When VM is no longer required , adminstrator run `vagrant destroy` and deploy new VM for next user `vagrant up`
-
 
 ### Creating/Updating new box
 
