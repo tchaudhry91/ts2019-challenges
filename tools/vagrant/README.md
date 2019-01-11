@@ -35,13 +35,9 @@ System will be ready to use after completing these steps. Now user can start pla
 
 ### Creating/Updating new box
 
-Run `vagrant up` in the current directory
+```cd ts2019-challenges/tools/vagrant/```
+```./create_box.sh```
 
-New vagrant box will be started and provisioned using scripts from the [provision\_scripts/](provision_scripts/) directory
-
-Generate new vagrant box. *This box will used on laptops*:
-
-`vagrant package --output laptop.box --vagrantfile Vagrantfile.laptop`
 
 ### Adding new docker images to the local registry
 
