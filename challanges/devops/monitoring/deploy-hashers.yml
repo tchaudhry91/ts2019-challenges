@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: hasher-blue
-          image: tchaudhry/hash-svc:ts2019blue
+          image: localhost:32000/tchaudhry/hash-svc:ts2019blue
           imagePullPolicy: Always
         
 --- 
@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
         - name: hasher-red
-          image: tchaudhry/hash-svc:ts2019red
+          image: localhost:32000/tchaudhry/hash-svc:ts2019red
           imagePullPolicy: Always
 
 ---

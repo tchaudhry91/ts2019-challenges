@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: blue-load
-          image: tchaudhry/simple-http-load:master 
+          image: localhost:32000/tchaudhry/simple-http-load:master 
           args: ["http://hasher-blue-svc:8080/hash?s=test"]
 
 ---
@@ -39,5 +39,5 @@ spec:
     spec:
       containers:
         - name: red-load
-          image: tchaudhry/simple-http-load:master 
+          image: localhost:32000/tchaudhry/simple-http-load:master 
           args: ["http://hasher-red-svc:8080/hash?s=test"]

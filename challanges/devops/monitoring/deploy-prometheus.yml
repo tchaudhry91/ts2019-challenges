@@ -1,4 +1,30 @@
 ---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus-vol
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  labels:
+    app: prom-service
+spec:
+  selector:
+    app: prom-app
+  type: NodePort
+  ports:
+   - port: 9090
+     nodePort: 30001
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,15 +43,21 @@ spec:
     spec:
       containers:
         - name: prometheus
-          image: prom/prometheus
+          image: localhost:32000/prom/prometheus
+          args:
+            - "--storage.tsdb.path=/prometheus/"
           volumeMounts:
           - name: config-volume
             mountPath: /etc/prometheus
+          - name: prometheus-data
+            mountPath: /prometheus/
       volumes:
         - name: config-volume
           configMap:
-            name: prom-config
-
+            name: prom-config   
+        - name: prometheus-data
+          persistentVolumeClaim:
+            claimName: prometheus-vol
 ---
 kind: Service
 apiVersion: v1
