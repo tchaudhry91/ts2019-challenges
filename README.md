@@ -16,10 +16,8 @@ We assume you are running an Ubuntu 18.04 VM image that can be destroyed and red
 
 ### TODO
 
-- [  ] add `tools/dependencies.sh` to provision
-- [ x ] add gitbook of challenges to docs
-- [  ] add `start.sh` for challenge
-- [  ] add `stop.sh` for challenge
-- [  ] add `clean.sh` for challenge
-
-
+- [ ] add `tools/dependencies.sh` to provision
+- [x] add gitbook of challenges to docs
+- [ ] add `start.sh` for challenge
+- [ ] add `stop.sh` for challenge
+- [ ] add `clean.sh` for challenge
