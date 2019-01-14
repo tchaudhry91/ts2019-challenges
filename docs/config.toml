@@ -1,0 +1,12 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "DevOps Village Challenges"
+theme = "hugo-theme-learn"
+
+[params]
+author = "dneff@adobe.com"
+description = "DevOps challenges Adobe"
+showVisitedLinks = false
+disableSearch = true
+disableInlineCopyToClipboard = true
+themeVariant = "red"
