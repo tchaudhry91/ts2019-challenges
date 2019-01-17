@@ -16,7 +16,11 @@ spec:
     spec:
       containers:
       - name: server
-        image: localhost:32000/oleksiimy/server:0.1
+        image: localhost:32000/oleksiimy/server:0.4
+        securityContext:
+          capabilities:
+            add:
+              - SYS_PTRACE
         ports:
         - containerPort: 80
         volumeMounts:

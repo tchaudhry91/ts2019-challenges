@@ -2,7 +2,7 @@
 set -e
 
 CONTAINERS="client server"
-VERSION="0.1"
+VERSION="0.4"
 
 
 for container in ${CONTAINERS}; do
