@@ -9,3 +9,4 @@ pre = "<b>2. </b>"
 # Secrets Management
 
 
+![GOG](/guardians-of-the-galaxy-poster.jpg)

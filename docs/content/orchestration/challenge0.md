@@ -1,9 +1,9 @@
 +++
-title = "Challenge 1"
+title = "Challenge 0"
 weight = 5
 +++
 
-Challenge 0
+Challenge 0 (Easy)
 
 ### Hello World.
 

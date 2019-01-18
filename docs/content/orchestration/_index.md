@@ -1,5 +1,5 @@
 +++
-title = "WIP - Orchestration"
+title = "Orchestration"
 chapter = true
 weight = 5
 pre = "<b>5. </b>"
