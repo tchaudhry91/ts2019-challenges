@@ -7,6 +7,26 @@ Challenge 1
 
 ## Install missing Package using salt cmd.run 
 
+Follow  http://localhost:1313/orchestration/challenge1/ for detailed Instructions 
+
+### 0. Setup 
+```
+cd <root directory where challenges are stored>/salt/Challenge3
+docker-compose up -d
+
+```
+
+### 0.5 Validate whether setup is running fine
+
+```
+$ docker ps
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS                    NAMES
+b5f463e4b531        challenge3_salt-minion3   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion3
+445e9e0d1ebe        challenge3_salt-minion2   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion2
+b36c0150ce11        challenge3_salt-minion1   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion1
+28c83753d9dc        challenge3_salt-master    "bash /opt/setup.sh"   9 hours ago         Up 9 hours          0.0.0.0:4505->4505/tcp   salt-master
+```
+
 ### 1. Determine the os details of the servers running in salt stack 
 
 ```
