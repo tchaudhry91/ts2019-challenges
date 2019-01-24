@@ -1,0 +1,16 @@
+#!/bin/bash
+
+clean
+key_checker () {
+	x=1
+	while [ $x -le 250 ]
+		do
+  		salt-key -A -y
+  		x=$(( $x + 1 ))
+		sleep 1
+	done
+	echo "All available keys accepted." && salt "*" test.ping && \
+	touch /var/log/salt/master && \
+	tail -f /var/log/salt/master
+}
+service salt-master start && key_checker

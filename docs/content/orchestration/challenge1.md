@@ -3,7 +3,7 @@ title = "Challenge 1"
 weight = 5
 +++
 
-Challenge 1
+Challenge 1 (Easy)
 
 ## Install missing Package using salt cmd.run 
 
