@@ -18,7 +18,7 @@ other state to manage. You'd like to keep it simple.
 
 ### Verify pre-requisites
 
--   SSH into your Vagrant environment with `vagrant ssh` if not already in that
+-   SSH into your  environment with `ssh techops` if not already in that
     environment
 -   Verify Kubernetes is working with
 
@@ -59,7 +59,7 @@ deploy our image using that by saving the following YAML into a file `deployment
         spec:
           containers:
           - name: frontend
-            image: saykumar/ts2019:s1
+            image: localhost:32000/saykumar/ts2019:s1
 
 
 ### Deploying with Kubectl
@@ -164,7 +164,7 @@ Edit the `deployment.yaml` file as shown below. Notice the `replicas: 3` line.
         spec:
           containers:
           - name: frontend
-            image: saykumar/ts2019:s1
+            image: localhost:32000/saykumar/ts2019:s1
 
 Deploy this update in-place with `kubectl apply -f deployment.yaml`.
 
@@ -216,7 +216,7 @@ Open up `deployment.yaml` in your text editor and edit it as shown:
         spec:
           containers:
           - name: frontend
-            image: saykumar/ts2019:s4
+            image: localhost:32000/saykumar/ts2019:s4
 
 And submit it to the cluster as `kubectl apply -f deployment.yaml`.
 
