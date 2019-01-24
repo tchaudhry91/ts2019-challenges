@@ -16,7 +16,7 @@ After completing this guide you will have laptop.box file.
 This file should be distributed to computers and following steps are required to install it:
 
 1. `vagrant box add laptop.box --name laptop`
-2. `git clone https://github.com/alekseymykhailov/ts2019-challenges.git` 
+2. `git clone https://github.com/dneff/ts2019-challenges.git` 
 3. cd to the repo dir
 3. `vagrant up`
 4. modify ~/.ssh/config to add this at top
