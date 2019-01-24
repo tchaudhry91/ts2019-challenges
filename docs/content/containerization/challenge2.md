@@ -125,7 +125,7 @@ If all goes to plan, you should see something as shown below:
 
 ![img](/containerization/l2s2.png)
 
-That's great, you've deployed the first app. But there's a 404 error on the
+That's great, you've deployed the first app. But there's a 502 error on the
 page. That's because the second app is still not deployed and wired up with an
 ingress rule.
 

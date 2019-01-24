@@ -126,14 +126,18 @@ The service type we created was of type `NodePort`, which means that every
 machine which is part of the Kubernetes cluster forwards traffic received on
 port `32644` to the Kubernetes Service we just created.
 
-In another terminal window, run this to verify that you can access the
-service: `watch -d curl -s http://localhost:32644`. Of course, replace
-`32644` with the port number that you saw in the output.
+In another terminal window, run this to verify that you can access the service:
+`watch -d curl -s http://localhost:32644`. You will have to replace `32644` with
+the port number that you saw in the output.
 
 You should see an output like this:
 
     Welcome to TS2019!
     Served from frontend-6f95c57495-7ppsf
+
+If no output shows up, please delete the service by running `kubectl delete -f
+service.yaml` and retry the previous step. At times, the `NodePort` service
+creation can fail.
 
 Congratulations, you've deployed a container and exposed it outside of the
 cluster!
@@ -226,3 +230,13 @@ occurs.
 
 Your code will be seen in the output of `curl`. Enter that in the text box
 for the challenge screen to complete this challenge!
+
+## Conclusion
+
+And that brings you to the end of this hands on session - you learnt how to
+deploy a container, expose it outside the cluster, scale it up and upgrade it.
+All without any impact to the service availability.
+
+Clean up your Kubernetes cluster by running `kubectl delete -f .` in the folder.
+This will delete resources corresponding to every YAML file in the current
+directory.
