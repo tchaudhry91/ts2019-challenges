@@ -1,5 +1,5 @@
 +++
-title = "Challenge 1"
+title = "Challenge 1 (Easy)"
 weight = 5
 +++
 

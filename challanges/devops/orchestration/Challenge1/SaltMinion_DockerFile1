@@ -1,0 +1,7 @@
+FROM ubuntu:xenial
+
+RUN  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y salt-minion
+
+COPY salt-minion/setup.sh /opt/setup.sh
+
+ENTRYPOINT ["bash","/opt/setup.sh"]

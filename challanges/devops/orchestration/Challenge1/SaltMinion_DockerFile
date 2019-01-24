@@ -1,0 +1,7 @@
+FROM ubuntu:bionic
+
+RUN  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg1 salt-minion emacs
+     
+COPY salt-minion/setup.sh /opt/setup.sh
+
+ENTRYPOINT ["bash","/opt/setup.sh"]
