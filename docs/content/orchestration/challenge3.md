@@ -10,9 +10,12 @@ Challenge 3 (Intermediate)
 Follow  http://localhost:1313/orchestration/challenge3/ for detailed Instructions 
 
 If you have gone through previous challenge you can realise doing changes during remote execution for small tasks is easy using command line but bigger and complex orcestration which need to do multiple changes there need to be better way. 
-The SLS (Salt State File) is a representation of the state in which a system should be in, and is set up to contain this data in a simple format. This is often called configuration management.
 This Challenge introduces applying Salt states to configure a apache2 server as well as update index.html file. 
 
+### Salt State file
+The SLS (Salt State File) is a representation of the state in which a system should be in, and is set up to contain this data in a simple format. This is often called configuration management. If you are inetrested read more about Salt state [here](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html)
+
+ 
 ### 0. Setup 
 ```
 cd <root directory where challenges are stored>/salt/Challenge3
