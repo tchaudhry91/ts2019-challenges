@@ -12,7 +12,9 @@ saykumar/ts2019:l2s2
 tchaudhry/hash-svc:ts2019blue
 tchaudhry/hash-svc:ts2019red
 tchaudhry/simple-http-load:master
-prom/prometheus"
+prom/prometheus
+python:3
+"
 
 kubectl rollout status deployment/registry --namespace=container-registry
 for image in $IMAGES; do
