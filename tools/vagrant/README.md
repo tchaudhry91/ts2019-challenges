@@ -22,7 +22,7 @@ This file should be distributed to computers and following steps are required to
 4. modify ~/.ssh/config to add this at top
 
 ```
-Host techops
+Host devops
    User vagrant
    IdentityFile ~/.vagrant.d/boxes/laptop/0/virtualbox/vagrant_private_key
    Hostname 192.168.33.10
