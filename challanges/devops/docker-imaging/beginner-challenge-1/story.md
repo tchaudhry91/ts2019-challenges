@@ -20,7 +20,7 @@ Hands-on:
   `vim Dockerfile`
 
 - Every Dockerfile must start with a `FROM` statement. This signifies the beginning point for an image. Almost always, we are building on top of something. Our app is python. So, let's grab a python based image to start from:
-  `FROM python:3`
+  `FROM localhost:32000/python:3`
 
 - So, we already have a base image with everything python needs to run in it. Let's `COPY` our super fancy code to it.
   `COPY . .`
@@ -34,7 +34,7 @@ Hands-on:
 
 - Here's what the final Dockerfile should look like!
 ```
-FROM python:3
+FROM localhost:32000/python:3
 
 COPY . .
 RUN pip install -r requirements.txt
