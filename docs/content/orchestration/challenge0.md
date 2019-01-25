@@ -20,4 +20,6 @@ docker exec salt-master salt "*" test.ping
 docker exec salt-master salt "*" cmd.run "whoami"
 ```
 
-So we learnt how salt provides an easy command line interface to query any information from multiple servers(termed minions). Lets begin the real challenge.
+So we learnt how salt provides an easy command line interface to query any information from multiple servers(termed minions). Lets get on some real challenge.
+
+Your flag to solve the challenge is - *ev19orchestration{number of minions}*. 

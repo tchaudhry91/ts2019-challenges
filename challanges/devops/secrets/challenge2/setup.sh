@@ -10,13 +10,13 @@ vault policy write nebula /opt/c2_policy.hcl
 vault token create -policy=nebula -format json | jq -r ".auth.client_token" > cubbyhole_secret
 
 vault login $(cat cubbyhole_secret)
-vault write cubbyhole/rocket/drax key="123-456-7890"
+vault write cubbyhole/rocket/drax flag="047f019bafff1bc0b83ef4316dc52436"
 vault login root
 vault kv put secret/drax/left/clue/here path=cubbyhole/rocket/drax key=$(cat cubbyhole_secret)
 
 # Dummy keys
-vault kv put secret/galaxy/user/key key=deadend
-vault kv put secret/galaxy/user/key1 key=anotherdeadend
+vault kv put secret/galaxy/user/key flag=deadend
+vault kv put secret/galaxy/user/key1 flag=anotherdeadend
 
 rm /opt/c2_policy.hcl cubbyhole_secret
 # exec tail -f /dev/null
