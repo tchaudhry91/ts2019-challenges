@@ -9,12 +9,12 @@ There should be four files on the filesystem: configmap-debug.yaml, km-deploy.ya
 
 
 1. Enable kube-monkey using the config file
-  - `kubectl apply -f configmap-debug.yaml`
+  - `kubectl apply -f <file 1>.yaml`
 
 2. Deploy the app with kube-monkey enabled
-  - `kubectl create -f km-deploy.yaml`
-  - `kubectl create -f namespace.yaml`
-  - `kubectl create -f monkey-victim.yaml`
+  - `kubectl create -f <file 2>.yaml`
+  - `kubectl create -f <file 3>.yaml`
+  - `kubectl create -f <file 4>.yaml`
 
 3. Check if it is working 
   - `watch kubectl get pods --namespace=smart-a-app`
