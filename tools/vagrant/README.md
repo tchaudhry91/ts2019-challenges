@@ -20,6 +20,7 @@ This file should be distributed to computers and following steps are required to
 3. cd to the repo dir
 3. `vagrant up`
 4. modify ~/.ssh/config to add this at top
+
 ```Host devops
    User vagrant
    IdentityFile ~/.vagrant.d/boxes/laptop/0/virtualbox/vagrant_private_key
