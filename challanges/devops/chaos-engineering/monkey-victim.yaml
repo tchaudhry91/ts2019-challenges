@@ -10,7 +10,7 @@ metadata:
     kube-monkey/kill-mode: "fixed-percent"
     kube-monkey/kill-value: "20"
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       name: monkey-victim
