@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 rm -f laptop.box
+(cd ../../ && vagrant destroy -f)
 vagrant destroy -f
 vagrant up
 vagrant package --output laptop.box
