@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CONTAINERS="vault_challengeuser
+CONTAINERS="vault_client
 vault_server
 vault_challenge1
 vault_challenge2

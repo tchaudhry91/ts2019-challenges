@@ -10,24 +10,6 @@ Your team has identified that servers running on apache are overloaded. It seems
 
 Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instructions 
 
-### 0. Setup 
-```
-cd <root directory where challenges are stored>/salt/Challenge3
-docker-compose up -d
-
-```
-
-### 0.5 Validate whether setup is running fine
-
-```
-$ docker ps
-CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS                    NAMES
-b5f463e4b531        challenge3_salt-minion3   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion3
-445e9e0d1ebe        challenge3_salt-minion2   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion2
-b36c0150ce11        challenge3_salt-minion1   "bash /opt/setup.sh"   9 hours ago         Up 9 hours                                   salt-minion1
-28c83753d9dc        challenge3_salt-master    "bash /opt/setup.sh"   9 hours ago         Up 9 hours          0.0.0.0:4505->4505/tcp   salt-master
-```
-
 ### 1. Determine the minions connected to master
 
 ```
@@ -66,7 +48,7 @@ If all servers are running apache2 then lets move to next step.
 #### 5. Lets find out the flag hidden somewhere in the servers
 
 ```
-docker exec salt-master salt <replace-with-minion-id>  cmd.run "curl -i "http://localhost"
+docker exec salt-master salt <replace-with-minion-id>  cmd.run "curl -i http://localhost"
 ```
 Great, with this you should be able to capture the flag. Pat yourself for completing another challenge. 
 To recap we learnt through this challenge how troubleshooting can be done remotely on multiple servers from a single command line interface. Lets move on to next challenge. 
