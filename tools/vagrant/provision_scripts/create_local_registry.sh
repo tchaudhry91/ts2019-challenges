@@ -14,6 +14,11 @@ tchaudhry/hash-svc:ts2019red
 tchaudhry/simple-http-load:master
 prom/prometheus
 python:3
+alpine:3.7
+vault
+ubuntu:bionic
+ubuntu:xenial
+agrawaltarun/devopschallenges:cicd
 "
 
 kubectl rollout status deployment/registry --namespace=container-registry
