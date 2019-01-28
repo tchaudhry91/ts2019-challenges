@@ -17,8 +17,6 @@ Here are the things provided:
     This client keeps serially throwing requests at the given hashing service.
 - A Prometheus Instance:
     To collect metrics from the given services.
-- A Grafana Instance: (Not used in this challenge)
-    To visualize the metrics
 
 Sources: challenges/challenge1
 
