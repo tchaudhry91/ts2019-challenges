@@ -32,4 +32,4 @@ To start the challenge you have to login to vault as root.
 
 If you are  interested further you may read more about vault [cubbyhole](https://www.vaultproject.io/docs/secrets/cubbyhole/index.html)
 
-Hint: vault kv engine store secrets in hierarchial paths. 
+_*More Hint (if you are stuck at step-2)*_: vault kv secrets are stored in hierarchial paths, think unix files and directory

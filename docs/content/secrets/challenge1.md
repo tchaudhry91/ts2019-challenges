@@ -17,3 +17,5 @@ Star-lord friends are there to help him on the journey
   - `vault kv get PATH/FILE`: fetch data from the specified file
 
 To get started, try running `vault kv list /secret`.
+
+_**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory

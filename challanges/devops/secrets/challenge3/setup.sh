@@ -6,8 +6,8 @@ export VAULT_ADDR=http://vaultserver:8200/
 export MOUNTED_VOL="/mount"
 
 # Insert secret for challenge
-vault login root
-vault kv put secret/iam/groot/nova key="pS3px4F2UI9k4QX1tduWLZIi"
+vault login 047f019bafff1bc0b83ef4316dc52436
+vault kv put secret/iam/groot/nova flag="pS3px4F2UI9k4QX1tduWLZIi"
 vault kv get -wrap-ttl=3600 -format=json secret/iam/groot/nova | jq -r ".wrap_info.token" > wraptoken
 vault kv put secret/galaxy/raone/yondu pathtogalaxysavior=$(cat wraptoken)
 
@@ -18,8 +18,8 @@ vault token create -policy=darex -format json | jq -r ".auth.client_token" > ${M
 # May be create a shared volume and copy the key and expose it
 
 # Dummy keys
-vault kv put secret/galaxy/raone/key key=deadend
-vault kv put secret/galaxy/raone/key1 key=nosecrethere
+vault kv put secret/galaxy/raone/key flag=deadend
+vault kv put secret/galaxy/raone/key1 flag=nosecrethere
 
 #For debugging
 tail -f /dev/null

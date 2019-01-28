@@ -81,6 +81,7 @@ docker exec -it vaultclient /bin/sh
 a) Restart vault server to cleanup secrets from previous challenge
 docker kill vaultserver && \
 docker rm vaultserver && \
+docker build -t vaultserver  -f VaultServer_Challenge3_DockerFile . && \ 
 docker run --name vaultserver --hostname vaultserver -d vaultserver
 
 b) Setup challengarena
@@ -90,11 +91,14 @@ docker rm vaultclient && \
 docker run -d --mount source=vault,destination=/mount --link vaultserver:vaultserver --name vaultclient vaultclient
 
 c) Setup  
+cd challenge3 && \
 docker build -t vaultchallenge3 -f VaultChallenge3_DockerFile . && \
 docker volume create vault && \
 docker run -d --mount source=vault,destination=/mount --link vaultserver:vaultserver vaultchallenge3
+
 d) Login
-docker exec -it vaultchallenge /bin/sh
+docker exec -it vaultclient /bin/sh
+
 ```
 
 
