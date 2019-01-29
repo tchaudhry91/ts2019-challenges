@@ -46,6 +46,7 @@ spec:
           image: localhost:32000/prom/prometheus
           args:
             - "--storage.tsdb.path=/prometheus/"
+            - "--config.file=/etc/prometheus/prometheus.yml"
           volumeMounts:
           - name: config-volume
             mountPath: /etc/prometheus
