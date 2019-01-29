@@ -30,4 +30,4 @@ TASK: Rewrite the above Dockerfile so that it still contains the `/unique-access
 #### Run the following command to get your flag after you have created a new image < 10Mb
 `tsvalidator validate docker chal4 --image {your-image-name}`
 
-NOTE: If you didn't complete this step in the first challenge, enable the validator now : `/vagrant/challanges/devops/docker-imaging/enable_validator.sh`
+NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
