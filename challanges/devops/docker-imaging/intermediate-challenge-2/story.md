@@ -9,7 +9,7 @@ It's a hello-world app. What kind of bloat do they think is there??
   NINE HUNDRED AND THIRY ONE MEGABYTES. You can wash your eyes all you want, but this number is correct.
 
 - Step 2: You do some math. < 1KB of code. ~10Mb of requirement library. Hmm. Definitely != 900+ MB. What about the base image? That's also a layer. Perhaps that's where the bloat is? Let's take a look.
-  `docker images python:3`
+  `docker images localhost:32000/python:3`
 
 - Step 3: The previous step should have made it clear by now. You need to choose your `FROM` statement carefully. The system contains a couple of pre-baked images on your system that can be used instead of `python:3`. Look them up with:
   `docker images -a | grep python`
