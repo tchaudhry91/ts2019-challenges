@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filehost
+  labels:
+    app: filehost
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filehost
+  template:
+    metadata:
+      labels:
+        app: filehost
+    spec:
+      containers:
+      - name: filehost
+        image: localhost:32000/tchaudhry/http-access-logs:master
+        ports:
+        - containerPort: 80

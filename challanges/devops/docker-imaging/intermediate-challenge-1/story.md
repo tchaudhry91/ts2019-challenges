@@ -23,5 +23,3 @@ So you read up on docker image layers. Apparently, each instruction in the Docke
 TASK: Change the Dockerfile so that subsequent changes to the code are built quickly and do not have to gather the requirements everytime!
 
 HINT: Try copying your app into the container in 2 different steps.
-
-TO-DO: Figure out how to get a flag again!

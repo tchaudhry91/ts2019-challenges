@@ -50,6 +50,4 @@ CMD python hello-world.py
 
 And viola! Hello World from a container!
 Notice the difference in the output when running inside a container? 
-To-Do:
-(Turn this into a flag somehow)
 
