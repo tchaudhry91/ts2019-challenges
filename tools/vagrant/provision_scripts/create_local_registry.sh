@@ -14,11 +14,15 @@ tchaudhry/hash-svc:ts2019red
 tchaudhry/simple-http-load:master
 prom/prometheus
 python:3
-alpine:3.7
-vault
 ubuntu:bionic
 ubuntu:xenial
 agrawaltarun/devopschallenges:cicd
+oleksiimy/vault_client:0.1
+oleksiimy/vault_server:0.1
+oleksiimy/vault_challenge1:0.1
+oleksiimy/vault_challenge2:0.1
+oleksiimy/vault_challenge3:0.1
+oleksiimy/vault_server_challenge3:0.1
 "
 
 kubectl rollout status deployment/registry --namespace=container-registry
