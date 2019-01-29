@@ -65,4 +65,4 @@ Notice the difference in the output when running inside a container?
 
 #### Run the following command to get your flag after you have executed your docker build instruction!
 
-`sudo DOCKER_HOST=unix:///var/snap/microk8s/362/docker.sock tsvalidator validate docker chal1 --image hello-world-python`
+`tsvalidator validate docker chal1 --image hello-world-python`
