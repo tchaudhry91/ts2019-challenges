@@ -4,12 +4,17 @@ weight = 5
 +++
 
 ### Hello World
+First a little bit of setup, run the following command to get a local pypi server that will serve dependencies for our app:
+`cd /vagrant/tools/vagrant/pypi/ && ./start.sh && cd -`
 
-Let's dockerize a hello-world app! Grab the python-hello-world repository and try running the python example in it.
+And enable the validator : `/vagrant/challanges/devops/docker-imaging/enable_validator.sh`
+
+Now, let's dockerize a hello-world app! Grab the python-hello-world repository and try running the python example in it.
+
 
 ```bash
-pip install -r requirements.txt
-python hello-world.py
+pip3 install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
+python3 hello-world.py
 ```
 (yes, 4 years on a rock and tutorials still do 'hello-world', disappointing)
 
@@ -20,7 +25,7 @@ python hello-world.py
 
 Every Dockerfile must start with a `FROM` statement. This signifies the beginning point for an image. Almost always, we are building on top of something. Our app is python. So, let's grab a python based image to start from:
 
-`FROM python:3`
+`FROM localhost:32000/python:3`
 
 So, we already have a base image with everything python needs to run in it. Let's `COPY` our super fancy code to it.
 
@@ -29,7 +34,7 @@ So, we already have a base image with everything python needs to run in it. Let'
 What's left? We have the interpreter, we have the code. Let's `RUN` the dependency gathering.
 (Note: This app doesn't really need the dependency, but we've put it in here to explain the RUN command)
 
-`RUN pip install -r requirements.txt`
+`RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt`
 
 Now, tell the container what `COMMAND` to run when it's started.
 
@@ -38,7 +43,7 @@ Now, tell the container what `COMMAND` to run when it's started.
 Here's what the final Dockerfile should look like!
 
 ```Docker
-FROM python:3
+FROM localhost:32000/python:3
 COPY . .
 RUN pip install -r requirements.txt
 CMD python hello-world.py
@@ -60,17 +65,4 @@ Notice the difference in the output when running inside a container?
 
 #### Run the following command to get your flag after you have executed your docker build instruction!
 
-`tsvalidator validate docker chal1 --image hello-world-python`
-
-
-#### Conclusion
-
-And that brings you to the end of this hands on session - you learned how to deploy a container, expose it outside the cluster, scale it up and upgrade it. All without any impact to the service
-availability.
-
-Clean up your cluster by doing these steps:
-
-`kubectl delete -f deployment.yaml`
-
-`kubectl delete -f service.yaml`
-
+`sudo DOCKER_HOST=unix:///var/snap/microk8s/362/docker.sock tsvalidator validate docker chal1 --image hello-world-python`

@@ -38,5 +38,7 @@ HINT: Try copying your app into the container in 2 different steps.
 
 #### FLAG:
 
-`tsvalidator validate docker chal2 --image hello-world-python`
+`sudo DOCKER_HOST=unix:///var/snap/microk8s/362/docker.sock tsvalidator validate docker chal2 --image hello-worlds-python`
+
+NOTE: If you didn't complete this step in the first challenge, enable the validator now : `/vagrant/challanges/devops/docker-imaging/enable_validator.sh`
 

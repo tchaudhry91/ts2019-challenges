@@ -27,11 +27,11 @@ hello-worlds-python     latest  927fb8d8ac54    24 minutes ago  931MB
 
 You do some math. < 1KB of code. ~10Mb of requirement library. Hmm. Definitely != 900+ MB. What about the base image? That's also a layer. Perhaps that's where the bloat is? Let's take a look.
 
-`docker images python:3`
+`docker images localhost:32000/python:3`
 
 #### Step 3: Smaller alternatives
 
-The previous step should have made it clear by now. You need to choose your `FROM` statement carefully. The system contains a couple of pre-baked images on your system that can be used instead of `python:3`. Look them up with:
+The previous step should have made it clear by now. You need to choose your `FROM` statement carefully. The system contains a couple of pre-baked images on your system that can be used instead of `localhost:32000/python:3`. Look them up with:
 
 `docker images -a | grep python`
 
@@ -47,5 +47,7 @@ Re-check the size of your image and post the output:
 
 #### FLAG:
 
-`tsvalidator validate docker chal3 --image hello-world-python --tag slim`
+`sudo DOCKER_HOST=unix:///var/snap/microk8s/362/docker.sock tsvalidator validate docker chal3 --image hello-world-python:slim`
+
+NOTE: If you didn't complete this step in the first challenge, enable the validator now : `/vagrant/challanges/devops/docker-imaging/enable_validator.sh`
 
