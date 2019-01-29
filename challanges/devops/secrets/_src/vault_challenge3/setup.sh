@@ -22,7 +22,7 @@ vault kv put secret/galaxy/raone/key flag=deadend
 vault kv put secret/galaxy/raone/key1 flag=nosecrethere
 
 #For debugging
-tail -f /dev/null
+#tail -f /dev/null
 
 
 
