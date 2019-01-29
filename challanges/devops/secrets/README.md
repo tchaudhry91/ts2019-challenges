@@ -19,9 +19,7 @@ cd <root>/ts2019-challenges/challanges/devops/secrets
 2. Setup Challenge0
 a) Run vaultserver
 ```
-cd ts2019-challenges/challanges/devops/secrets
-docker build -t vaultserver  -f VaultServer_DockerFile . && \
-docker run --name vaultserver --hostname vaultserver -d vaultserver
+docker run --name vaultserver --hostname vaultserver -d localhost:32000/oleksiimy/vault_server:0.1
 ```
 
 b) Setup challengarena
