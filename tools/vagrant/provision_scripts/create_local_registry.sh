@@ -36,4 +36,5 @@ for image in $IMAGES; do
     docker tag $image localhost:32000/$image
     docker push localhost:32000/$image
     docker image rm $image
+    docker image rm localhost:32000/$image
 done
