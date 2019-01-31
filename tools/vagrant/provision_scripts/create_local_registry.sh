@@ -28,6 +28,8 @@ oleksiimy/vault_challenge1:0.1
 oleksiimy/vault_challenge2:0.1
 oleksiimy/vault_challenge3:0.1
 oleksiimy/vault_server_challenge3:0.1
+bbinet/salt-master
+bbinet/salt-minion
 "
 
 kubectl rollout status deployment/registry --namespace=container-registry

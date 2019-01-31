@@ -12,23 +12,21 @@ Challenge 1 - Configure salt-master and salt-minion
 In dir, bring up salt master and minions 
 
 ```
-kubectl create -f salt.yaml
+kubectl create -f k8s/smaster.yaml
+kubectl create -f k8s/sminion.yaml
+```
 
 Check if they are running and get the pod name for salt master and minion
+
 ```
 kubectl get pods | grep -E "smaster|sminion" 
 ```
-Get salt-master ip
 
-```
-kubectl exec smaster-0 -- cat /etc/hosts |grep smaster
-```
 
 Configure salt-minion and make sure they know the salt-master
 
 ```
-kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} -- sh -c  'echo "master: smaster-0">/etc/salt/minion'
-kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} -- sh -c  'echo "<ip from previous step> smaster-0">>/etc/hosts'
+kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} -- sh -c  'echo "master: smaster-0.smaster.default.svc.cluster.local">/etc/salt/minion'
 kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} /etc/init.d/salt-minion restart
 ```
 

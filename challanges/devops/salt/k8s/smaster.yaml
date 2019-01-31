@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: smaster
+  labels:
+    app: smaster
+spec:
+  ports:
+  - port: 4505
+    name: smaster01
+  - port: 4506
+    name: smaster02
+  clusterIP: None
+  selector:
+    app: smaster
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: smaster
+spec:
+  serviceName: "smaster" # should match headless service .metadata.name
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smaster
+  template:
+    metadata:
+      labels:
+        app: smaster
+    spec:
+      containers:
+      - name: smaster
+        image: localhost:32000/bbinet/salt-master
+        ports:
+        - containerPort: 4505
+          name: smaster01
+        - containerPort: 4506
+          name: smaster02
+
