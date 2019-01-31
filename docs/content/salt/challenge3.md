@@ -3,7 +3,7 @@ title = "Challenge 3"
 weight = 15
 +++
 
-Challenge 3 (Intermediate)
+Challenge 3 - Configuration Management
 
 ## Apply Salt states to configure a server cluster with apache2 
 
