@@ -81,9 +81,7 @@ ingress.extensions/jenkins created
 
 Help guide: 
 
-Use admin/admin to auth
-
-`http://192.168.33.10/job/SAMPLE_PIPELINE/pipeline-syntax/`
+Open `http://192.168.33.10/job/SAMPLE_PIPELINE/pipeline-syntax/` in your browser  (Use admin/admin to auth)
 
 FLAG: `http://192.168.33.10/script` - User will be asked to find or given a random text which needs to be decrypted. Ex: {AQAAABAAAAAQvy72G6TPt008hCqWJuLVsOIHVPx5+tqBJUsnnCPEo+Y=}
 
