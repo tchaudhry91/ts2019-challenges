@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - name: jenkins
+        image: localhost:32000/agrawaltarun/devopschallenges:cicd
+        command: [ "/bin/bash", "-ce", "sh /start.sh && tail -f /dev/null" ]
+        ports:
+        - containerPort: 8080
+
