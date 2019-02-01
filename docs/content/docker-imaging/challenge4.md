@@ -23,7 +23,7 @@ RUN rm access.log
 > I'm trying to gather the unique list of IPs from a very large apache log. While the unique list is very small, the final docker image is very large! I even used a small alpine base image!
 > Can someone help me optimize this?
 
-SETUP : Run the following command: `cd /vagrant/tools/vagrant/filehost/ && ./start.sh && cd -`
+SETUP : Run the following command: `cd /vagrant/challanges/devops/docker-imaging/setup/filehost/ && ./start.sh && cd -`
 
 TASK: Rewrite the above Dockerfile so that it still contains the `/unique-access.log` but is as small as possible. There are multiple ways to achieve this and we only care about the final result. You get credit as long as your final image is as small as it can be.
 
