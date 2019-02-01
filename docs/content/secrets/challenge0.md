@@ -5,7 +5,7 @@ weight = 4
 
 ### Hello World.
 
-1. Star-lord should start Vault Server and Client using the following:
+1. Star-lord should start Vault Server and Client. Use the following:
 
     - ` ./start-vaultchallenge0.sh`
     - ` ./login-vault-client.sh`
