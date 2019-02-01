@@ -1,54 +1,47 @@
 +++
 title = "Challenge 2"
-weight = 10
+weight = 5
 +++
 
-Challenge 2 (Easy)
+Challenge 2 - Remote Execution
 
-## Find the culprit in the cluster and fix it
-Your team has identified that servers running on apache are overloaded. It seems that some of deployed servers are not  in service. You need to use the salt cmd to figure out which one is faulty and also fix it to resolve the issue which is impacting organizations customers worldwide. 
+## Install missing Package using salt cmd.run
 
-Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instructions 
+Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instructions
 
-### 1. Determine the minions connected to master
 
-```
-docker exec salt-master salt "*" test.ping
-Expected Output
-salt-minion-salt-minion3:
-    True
-salt-minion-salt-minion2:
-    True
-salt-minion-salt-minion1:
-    True
-```
-So there are three servers now let us found out which one is guilty. 
-
-#### 2. Find out the current state of the service running on the servers.
+### 1. Determine the os details of the servers running in salt stack
 
 ```
-docker exec salt-master salt "*" cmd.run "service apache2 status"
+kubectl exec smaster-0 -- salt \* cmd.run "cat /etc/hosts"
 ```
-The above command should provide information about  minion details which is not running apache2
 
-#### 3. Start the service on the faulty minion
+#### 2. Find out a package  name "emacs" whether it is installed across all the servers
 
 ```
-docker exec salt-master salt <replace-with-minion-id>  cmd.run "service apache2 start"
+kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
+```
+The above command should provide information about package details if it is already installed. Note down the minion id which do not have the emacs pkg installed. 
+
+#### 3. Install the package on minion which dont have installed obtained from step-2 
+
+```
+kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} apt-get install apache2
 ```
 Ensure that there should not be any error returned in the output. 
 
-#### 4. Validate again for to check all the servers are running apache now
+#### 4. Validate again for consistent state across all the minions
 
 ```
-docker exec salt-master salt "*" cmd.run "service apache2 status"
+kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
 ```
-If all servers are running apache2 then lets move to next step. 
 
-#### 5. Lets find out the flag hidden somewhere in the servers
+If you get an output which displays all the minons have the emacs installed. 
+Imagine the pain eradicated for having to individually sshing and finding out these details across hunders of servers. 
+
+#### 5. Your key will be combination of string written below and minion name 
 
 ```
-docker exec salt-master salt <replace-with-minion-id>  cmd.run "curl -i http://localhost"
+ev19-dc-<minonid>
 ```
-Great, with this you should be able to capture the flag. Pat yourself for completing another challenge. 
-To recap we learnt through this challenge how troubleshooting can be done remotely on multiple servers from a single command line interface. Lets move on to next challenge. 
+yay! You have reached the end of this Challenge. To recap this challange we learnt about how Salt lets you remotely execute shell commands across multiple systems using cmd.run. To explore a little further there are also multiple execution function which can be used which can further abstract the limitation of os specific commands. See https://docs.saltstack.com/en/getstarted/ssh/remotex.html for few more such examples. 

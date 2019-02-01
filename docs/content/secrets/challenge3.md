@@ -1,59 +1,39 @@
 +++
 title = "Challenge 3"
-weight = 15
+weight = 10
 +++
 
-### Use Vault's unwrap command to unlock master key
+### Retrieve a secret from a Vault cubbyhole
 
-Star-lord is tasked to go across galaxy with limited access. This time Thanos has wrapped the key to unlock the galaxy secret. To help Nova has left a clue in the kv locker which if unearthed will pave the way to find and retrieve the master key.
-The access is controlled via policy. 
+Star-lord is again need to search for challenge stored in cubbyhole by Thanos.  The path and the login key to the cubbyhole is hidden inside a key value(kv) secret engine. This  will be in a deep route among few  deadends.
 
-  1. Start vault-server, vault-client and login to vault
+About vault cubbyhole secret engine: The vault cubbyhole secrets engine is used to store arbitrary secrets. No token (even root) can access another token's cubbyhole. When the token expires, its cubbyhole is destroyed.
 
-    - `cd /vagrant/challanges/devops/secrets/`
-    - `./start-vaultchallenge3.sh`
-    - `./login-vault-client.sh`
+To start the challenge you have to login to vault as root.
 
-  2. Search out for the token using which you get limited access to the vault server 
+1. As before, begin with starting vault-server, vault-client and login as root
 
-    - `cat /mount/breadcrumb`
+  - `cd /vagrant/challanges/devops/secrets/`
+  - `./start-vaultchallenge2.sh`
+  - `./login-vault-client.sh`
+  - `vault login root`
 
-  3. Login using this token
+2. Once you are authenticated try to look out for the token which is hidden inside "/secret" path of kv secret engine.
+  
+  - `vault kv list` - To list the keys in the vault kv secret use this command
+  - `vault kv get` - To get the value of a key  use following command
 
-    - `vault login <token-received-in-step-1>`
+    _**Hint**_: Get started with following command
+    `vault kv list /secret`
 
-  4. Search for the token which is hidden in the kv secret hierarchy . Start from here 
+3. Once you have got the secret , login with token which have access to the cubbyhole
+  - `vault login <token-retrieved-from-step_2>`
 
-    - `vault kv list /secret`
+4. Find and retrieve the key inside the cubbyhole to solve the challenge
+ - `vault read cubbyhole/<path-retrieved-from-step2>`
 
-       **_Hint_**: vault kv secrets are stored in hierarchial paths, think unix files and directory  
+5. Voila the Flag is revealed to you. Congrats for completing this challenge. 
 
-  5. Once you encounter a kv secret key use following command to see the value 
+If you are  interested further you may read more about vault [cubbyhole](https://www.vaultproject.io/docs/secrets/cubbyhole/index.html)
 
-    - `vault kv get /secret/<path_to_secret_key>`
-
-  6. Once the  secret key to unwrap one time secret( and the flag) is revealed under one of the hirarchy use following command 
-
-    - `vault unwrap <token-obtained-from-step4>`  
-
-  7. The output will have a block of the unwrapped flag revealed to you  . Search for following
-
-    - `flag:<>`
-
-  Enter the flag value in the CTFd portal to complete the challenge. Here is some awesome work done to save the Adobe galaxy from Thanos and reclaim order. ;o) 
-
-  8.__Optional step__ : vault unwrap provides mechanism to share one time password with any unauthenticated user. Try to run the same command again to see if you can reveal the flag again or not. 
-
- - `vault unwrap <token-obtained-from-step4>`
-
-### More about vault unwrap 
-The unwrap command unwraps a wrapped secret from Vault by the given token. The result is the same as the "vault read" operation on the non-wrapped secret. If no token is given, the data in the currently authenticated token is unwrapped.
-Read more about vault policy which can be used to provide fine grain access of secrets - see [link](https://www.vaultproject.io/docs/concepts/policies.html)
-
-- __More Hints__
-  - If you get message like "	* permission denied" in the response of command, that means you dont have access to the resource. Keep looking for the ones for which you have access. 
-
-Post-challenge clean up:
-
-- `cd /vagrant/ts2019-challenges/challanges/devops/secrets/`
-- `./destroy.sh`
+_**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory

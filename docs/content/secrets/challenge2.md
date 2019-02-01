@@ -1,39 +1,25 @@
 +++
 title = "Challenge 2"
-weight = 10
+weight = 5
 +++
 
-### Retrieve a secret from a Vault cubbyhole
+### Fetch a secret from the KV store by using `list/get`
 
-Star-lord is again need to search for challenge stored in cubbyhole by Thanos.  The path and the login key to the cubbyhole is hidden inside a key value(kv) secret engine. This  will be in a deep route among few  deadends.
+Thanos has created a multi level grid to get into vault, the key to which is stored in a storehouse in vault. To solve the challenge Star lord to guess the path and retrieve the key. This will pave the path to future gates.
 
-About vault cubbyhole secret engine: The vault cubbyhole secrets engine is used to store arbitrary secrets. No token (even root) can access another token's cubbyhole. When the token expires, its cubbyhole is destroyed.
+Star-lord friends are there to help him on the journey
 
-To start the challenge you have to login to vault as root.
-
-1. As before, begin with starting vault-server, vault-client and login as root
+1. Begin the challenge by starting  vault-server, vault-client and authenticating as root:
 
   - `cd /vagrant/challanges/devops/secrets/`
-  - `./start-vaultchallenge2.sh`
+  - `./start-vaultchallenge1.sh`
   - `./login-vault-client.sh`
   - `vault login root`
 
-2. Once you are authenticated try to look out for the token which is hidden inside "/secret" path of kv secret engine.
-  
-  - `vault kv list` - To list the keys in the vault kv secret use this command
-  - `vault kv get` - To get the value of a key  use following command
+2. Find the hidden key by using the following [commands](https://www.vaultproject.io/docs/commands/):
+  - `vault kv list PATH`: list files from the specified path
+  - `vault kv get PATH/FILE`: fetch data from the specified file
 
-    _**Hint**_: Get started with following command
-    `vault kv list /secret`
-
-3. Once you have got the secret , login with token which have access to the cubbyhole
-  - `vault login <token-retrieved-from-step_2>`
-
-4. Find and retrieve the key inside the cubbyhole to solve the challenge
- - `vault read cubbyhole/<path-retrieved-from-step2>`
-
-5. Voila the Flag is revealed to you. Congrats for completing this challenge. 
-
-If you are  interested further you may read more about vault [cubbyhole](https://www.vaultproject.io/docs/secrets/cubbyhole/index.html)
+To get started, try running `vault kv list /secret`.
 
 _**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory

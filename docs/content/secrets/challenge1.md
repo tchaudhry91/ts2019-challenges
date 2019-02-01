@@ -1,25 +1,41 @@
 +++
 title = "Challenge 1"
-weight = 5
+weight = 4
 +++
 
-### Fetch a secret from the KV store by using `list/get`
+### Hello World.
 
-Thanos has created a multi level grid to get into vault, the key to which is stored in a storehouse in vault. To solve the challenge Star lord to guess the path and retrieve the key. This will pave the path to future gates.
+1. Star-lord should start Vault Server and Client. Use the following:
 
-Star-lord friends are there to help him on the journey
+    - `cd /vagrant/challanges/devops/secrets/`
+    - ` ./start-vaultchallenge0.sh`
+    - ` ./login-vault-client.sh`
 
-1. Begin the challenge by starting  vault-server, vault-client and authenticating as root:
+2. Verify the status of the Vault system.
 
-  - `cd /vagrant/challanges/devops/secrets/`
-  - `./start-vaultchallenge1.sh`
-  - `./login-vault-client.sh`
-  - `vault login root`
+    - `vault status`: displays the current status of the system.
 
-2. Find the hidden key by using the following [commands](https://www.vaultproject.io/docs/commands/):
-  - `vault kv list PATH`: list files from the specified path
-  - `vault kv get PATH/FILE`: fetch data from the specified file
+```bash
 
-To get started, try running `vault kv list /secret`.
+# vault status
+Expected Output:
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    1
+Threshold       1
+Version         0.11.5
+Cluster Name    vault-cluster-81a0bfca
+Cluster ID      eb1f59e2-00b1-82fd-427f-9d8c977b9d19
+HA Enabled      false
+```
 
-_**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory
+ If you got the expected response form the vault system, you are ready to dive into the challenges.
+
+3.Flag is version of the vault server displayed on the output of command in step 2 (remove the "." e.g.= 0.11.5 will become 0115)
+
+  - `dcorchestration<vault-version>`
+
+More info: If you are interested to get a primer about vault secret management tool, please see [link](https://www.hashicorp.com/resources/journey-vault-1-0) 
