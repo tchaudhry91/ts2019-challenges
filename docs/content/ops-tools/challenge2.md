@@ -1,10 +1,7 @@
 +++
 title = "Challenge 2"
-weight = 15
+weight = 10
 +++
-
-Challenge 2 - Find top webserver syscalls
-
 
 
 Start environment
@@ -19,12 +16,14 @@ Login to the server
 ./login.sh
 ```
 
+Challenge 2 - Find HTTP request header value
 
-Find child process ID (PID) of nginx web server
-Hint: Use `pstree -np`
+Someone wrote his first Hello World Python web client app and sending requests to the your webserver.
+Find HTTP request header and value this client is sending using tcpdump tool.
 
-Find top syscalls using strace tool.
+Tcpdump is a common packet analyzer that runs under the command line. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. 
 
-Strace is a diagnostic, debugging and instructional userspace utility for Linux. It is used to monitor and tamper with interactions between processes and the Linux kernel, which include system calls, signal deliveries, and changes of process state.
 
-```timeout 30s strace -c -p <PID>```
+Hint: use `tcpdump -nn` with verbose to find header value
+
+Your code will be seen in the output of `tcpdump` command. Use only header field value without fileld name.

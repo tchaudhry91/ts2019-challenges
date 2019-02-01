@@ -1,8 +1,9 @@
 +++
 title = "Challenge 1"
-weight = 10
+weight = 5
 +++
 
+Challenge 1
 
 Start environment
 
@@ -16,14 +17,13 @@ Login to the server
 ./login.sh
 ```
 
-Challenge 1 - Find HTTP request header value
+Get webserver version using `nmap` tool.
 
-Someone wrote his first Hello World Python web client app and sending requests to the your webserver.
-Find HTTP request header and value this client is sending using tcpdump tool.
+ Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering.
 
-Tcpdump is a common packet analyzer that runs under the command line. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. 
+ Webserver is running on localhost.
+
+ Hint: run `nmap` without arguments for help
 
 
-Hint: use `tcpdump -nn` with verbose to find header value
-
-Your code will be seen in the output of `tcpdump` command. Use only header field value without fileld name.
+Your code will be seen in the output of `nmap` command. Use only version number without webserver name
