@@ -1,5 +1,5 @@
 +++
-title = "Challenge 1 (Easy)"
+title = "Challenge 1"
 weight = 5
 +++
 
@@ -9,7 +9,9 @@ Thanos has created a multi level grid to get into vault, the key to which is sto
 
 Star-lord friends are there to help him on the journey
 
-1. Start the challenge by authenticating as root:
+1. Begin the challenge by starting  vault-server, vault-client and authenticating as root:
+  - `./start-vaultchallenge1.sh`
+  - `./login-vault-client.sh`
   - `vault login root`
 
 2. Find the hidden key by using the following [commands](https://www.vaultproject.io/docs/commands/):

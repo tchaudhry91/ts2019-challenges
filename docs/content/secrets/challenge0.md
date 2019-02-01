@@ -5,9 +5,14 @@ weight = 4
 
 ### Hello World.
 
-Star-lord should verify the status of the Vault system.
+1. Star-lord should start Vault Server and Client using the following:
 
-- `vault status`: displays the current status of the system.
+    - ` ./start-vaultchallenge0.sh`
+    - ` ./login-vault-client.sh`
+
+2. Verify the status of the Vault system.
+
+    - `vault status`: displays the current status of the system.
 
 ```bash
 
