@@ -1,7 +1,7 @@
 +++
 title = "Orchestration"
 chapter = true
-weight = 4
+weight = 5
 pre = "<b>5. </b>"
 +++
 ### DevOps Challenges
