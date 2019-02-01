@@ -10,6 +10,8 @@ Thanos has created a multi level grid to get into vault, the key to which is sto
 Star-lord friends are there to help him on the journey
 
 1. Begin the challenge by starting  vault-server, vault-client and authenticating as root:
+
+  - `cd /vagrant/challanges/devops/secrets/`
   - `./start-vaultchallenge1.sh`
   - `./login-vault-client.sh`
   - `vault login root`

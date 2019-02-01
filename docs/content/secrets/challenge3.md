@@ -10,6 +10,7 @@ The access is controlled via policy.
 
   1. Start vault-server, vault-client and login to vault
 
+    - `cd /vagrant/challanges/devops/secrets/`
     - `./start-vaultchallenge3.sh`
     - `./login-vault-client.sh`
 
@@ -52,3 +53,7 @@ Read more about vault policy which can be used to provide fine grain access of s
 - __More Hints__
   - If you get message like "	* permission denied" in the response of command, that means you dont have access to the resource. Keep looking for the ones for which you have access. 
 
+Post-challenge clean up:
+
+- `cd /vagrant/ts2019-challenges/challanges/devops/secrets/`
+- `./destroy.sh`
