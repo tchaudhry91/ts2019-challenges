@@ -3,6 +3,19 @@ title = "Challenge 1"
 weight = 10
 +++
 
+
+Start environment
+
+```
+./start.sh
+```
+
+Login to the server
+
+```
+./login.sh
+```
+
 Challenge 1 - Find HTTP request header value
 
 Someone wrote his first Hello World Python web client app and sending requests to the your webserver.

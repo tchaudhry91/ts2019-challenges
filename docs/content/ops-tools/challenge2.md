@@ -5,6 +5,21 @@ weight = 15
 
 Challenge 2 - Find top webserver syscalls
 
+
+
+Start environment
+
+```
+./start.sh
+```
+
+Login to the server
+
+```
+./login.sh
+```
+
+
 Find child process ID (PID) of nginx web server
 Hint: Use `pstree -np`
 
