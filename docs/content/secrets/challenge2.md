@@ -1,5 +1,5 @@
 +++
-title = "Challenge 2 (Intermediate)"
+title = "Challenge 2"
 weight = 10
 +++
 
@@ -11,7 +11,9 @@ About vault cubbyhole secret engine: The vault cubbyhole secrets engine is used 
 
 To start the challenge you have to login to vault as root.
 
-1. As before, login as root
+1. As before, begin with starting vault-server, vault-client and login as root
+  - `./start-vaultchallenge2.sh`
+  - `./login-vault-client.sh`
   - `vault login root`
 
 2. Once you are authenticated try to look out for the token which is hidden inside "/secret" path of kv secret engine.
