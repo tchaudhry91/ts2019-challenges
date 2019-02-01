@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: pypi-web
+spec: 
+  ports: 
+     -  port: 12000
+        protocol: TCP
+        targetPort: 80
+        nodePort: 32001
+  selector: 
+    app: pypi-server
+  type: NodePort

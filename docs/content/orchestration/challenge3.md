@@ -73,6 +73,13 @@ docker exec salt-master salt salt-minion-salt-minion2 cmd.run "curl -i http://lo
 The webpage output should return post running the command. The flag will be hidden somewhere in the output. 
 Congratulations for completing the challenge.
 
+### 6. Optional - See what happens if you try to apply the states again.
+
+```
+docker exec salt-master salt "*" state.apply  top | more 
+```
+The advantage of salt states are they are idempotent. What does that mean is it will not rerun 
+
 
 
 

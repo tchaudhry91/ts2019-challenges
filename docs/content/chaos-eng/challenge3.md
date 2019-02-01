@@ -14,5 +14,5 @@ https://github.com/asobti/kube-monkey#opting-in-to-chaos
   - `kubectl describe -f _____.yaml`
 3. Verify that 2 pods are being terminated instead of 1
 
-#### What is the value needed to be changed?
+#### What is the value changed?
 Provide the answer in the form: `key: "value"`

@@ -8,7 +8,7 @@ metadata:
     kube-monkey/identifier: monkey-victim
     kube-monkey/mtbf: '1'
     kube-monkey/kill-mode: "fixed-percent"
-    kube-monkey/kill-value: "20"
+    kube-monkey/kill-value: "10"
 spec:
   replicas: 10
   selector:
@@ -22,7 +22,7 @@ spec:
         name: monkey-victim
         kube-monkey/mtbf: '1'
         kube-monkey/kill-mode: "fixed-percent"
-        kube-monkey/kill-value: "20"
+        kube-monkey/kill-value: "10"
     spec:
       containers:
       - name: monkey-victim

@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sminion
+spec:
+  serviceName: "sminion"
+  replicas: 3
+  selector:
+    matchLabels:
+      name: sminion
+  serviceName: sminion
+  template:
+    metadata:
+      labels:
+        name: sminion
+    spec:
+      containers:
+      - name: sminion
+        image: localhost:32000/bbinet/salt-minion
+

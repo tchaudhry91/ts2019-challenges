@@ -62,18 +62,28 @@ Archive the files under directory created
 
 #### SETUP INSTRUCTIONS:
 
-Docker Must be installed on the systems
-Docker login docker-aem-sp.dr.corp.adobe.com
 
-`docker pull docker-aem-sp.dr.corp.adobe.com/techsummit:devops01`
+`ssh devops`
 
-`docker run -i -t -p 8080:8080 techsummit:devops01`
+`cd /vagrant/challanges/devops/ci-cd`
 
-`sh start.sh`
+`./start.sh`
 
-Help guide: `http://localhost:8080/job/SAMPLE_PIPELINE/pipeline-syntax/`
+Example output
 
-FLAG: `http://localhost:8080/script` - User will be asked to find or given a random text which needs to be decrypted. Ex: {AQAAABAAAAAQvy72G6TPt008hCqWJuLVsOIHVPx5+tqBJUsnnCPEo+Y=}
+```
+deployment.apps/jenkins created
+Waiting for deployment "jenkins" rollout to finish: 0 of 1 updated replicas are available...
+deployment "jenkins" successfully rolled out
+service/jenkins created
+ingress.extensions/jenkins created
+```
+
+Help guide: 
+
+Open `http://192.168.33.10/job/SAMPLE_PIPELINE/pipeline-syntax/` in your browser  (Use admin/admin to auth)
+
+FLAG: `http://192.168.33.10/script` - User will be asked to find or given a random text which needs to be decrypted. Ex: {AQAAABAAAAAQvy72G6TPt008hCqWJuLVsOIHVPx5+tqBJUsnnCPEo+Y=}
 
 `println(hudson.util.Secret.fromString("kasingh").getEncryptedValue())`
 

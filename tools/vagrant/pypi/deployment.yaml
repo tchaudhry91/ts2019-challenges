@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pypi-server
+  labels:
+    app: pypi-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pypi-server
+  template:
+    metadata:
+      labels:
+        app: pypi-server
+    spec:
+      containers:
+      - name: pypi
+        image: localhost:32000/tchaudhry/pypi:master
+        env:
+        - name: PYPI_ROOT
+          value: "/srv/pypi_custom"
+        ports:
+        - containerPort: 80

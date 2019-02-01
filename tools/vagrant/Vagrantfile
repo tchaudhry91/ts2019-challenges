@@ -15,4 +15,5 @@ Vagrant.configure("2") do |config|
    end
   config.vm.provision "shell", path: "provision_scripts/setup_k8s.sh"
   config.vm.provision "shell", path: "provision_scripts/create_local_registry.sh"
+  config.vm.provision "shell", path: "provision_scripts/install_python.sh"
 end
