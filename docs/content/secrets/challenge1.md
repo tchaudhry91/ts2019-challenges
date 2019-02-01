@@ -7,6 +7,7 @@ weight = 4
 
 1. Star-lord should start Vault Server and Client. Use the following:
 
+    - `cd /vagrant/challanges/devops/secrets/`
     - ` ./start-vaultchallenge0.sh`
     - ` ./login-vault-client.sh`
 
