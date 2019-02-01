@@ -13,13 +13,13 @@ Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instruction
 ### 1. Determine the os details of the servers running in salt stack 
 
 ```
-kubectl exec salt-master -- salt \* cmd.run "cat /etc/hosts"
+kubectl exec smaster-0 -- salt \* cmd.run "cat /etc/hosts"
 ```
 
 #### 2. Find out a package  name "emacs" whether it is installed across all the servers
 
 ```
-kubectl exec salt-master salt \* cmd.run "dpkg -l apache2"
+kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
 ```
 The above command should provide information about package details if it is already installed. Note down the minion id which do not have the emacs pkg installed. 
 
@@ -33,7 +33,7 @@ Ensure that there should not be any error returned in the output.
 #### 4. Validate again for consistent state across all the minions
 
 ```
-kubectl exec salt-master salt \* cmd.run "dpkg -l apache2"
+kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
 ```
 
 If you get an output which displays all the minons have the emacs installed. 
