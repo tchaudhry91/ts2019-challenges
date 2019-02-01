@@ -41,9 +41,9 @@ The access is controlled via policy.
 
   Enter the flag value in the CTFd portal to complete the challenge. Here is some awesome work done to save the Adobe galaxy from Thanos and reclaim order. ;o) 
 
-   __Optional step__ : vault unwrap provides mechanism to share one time password with any unauthenticated user. Try to run the same command again to see if you can reveal the flag again or not. 
+  8.__Optional step__ : vault unwrap provides mechanism to share one time password with any unauthenticated user. Try to run the same command again to see if you can reveal the flag again or not. 
 
-    - `vault unwrap <token-obtained-from-step4>`
+ - `vault unwrap <token-obtained-from-step4>`
 
 ### More about vault unwrap 
 The unwrap command unwraps a wrapped secret from Vault by the given token. The result is the same as the "vault read" operation on the non-wrapped secret. If no token is given, the data in the currently authenticated token is unwrapped.
