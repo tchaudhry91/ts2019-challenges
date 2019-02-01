@@ -21,7 +21,7 @@ To start the challenge you have to login to vault as root.
   - `vault kv list` - To list the keys in the vault kv secret use this command
   - `vault kv get` - To get the value of a key  use following command
 
-    Hint: Get started with following command
+    _**Hint**_: Get started with following command
     `vault kv list /secret`
 
 3. Once you have got the secret , login with token which have access to the cubbyhole
@@ -34,4 +34,4 @@ To start the challenge you have to login to vault as root.
 
 If you are  interested further you may read more about vault [cubbyhole](https://www.vaultproject.io/docs/secrets/cubbyhole/index.html)
 
-_*More Hint (if you are stuck at step-2)*_: vault kv secrets are stored in hierarchial paths, think unix files and directory
+_**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory
