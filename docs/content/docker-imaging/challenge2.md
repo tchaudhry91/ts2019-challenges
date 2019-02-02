@@ -13,6 +13,7 @@ Easy stuff.
 docker build...docker run...
 
 #### Step 1: Retry the docker build command.
+In the `intermediate-challenge-1/python-hello-worlds` directory, try:
 
 `docker build -t "hello-worlds-python" .`
 
