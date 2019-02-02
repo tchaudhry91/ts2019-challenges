@@ -5,7 +5,7 @@ weight = 5
 
 ### Hello World
 First a little bit of setup, run the following command to get a local pypi server that will serve dependencies for our app:
-`cd /vagrant/tools/vagrant/pypi/ && ./start.sh && cd -`
+`cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -`
 
 And enable the validator : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
 
