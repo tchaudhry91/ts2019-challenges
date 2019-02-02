@@ -17,11 +17,20 @@ The SLS (Salt State File) is a representation of the state in which a system sho
 
  
 ### 1. Setup 
-copy the content below to create a new file top.sls in your local dir
+
+Run setup script to reset environment
+
+```
+./setup3.sh
+```
+
+copy the content below to create a new file `top.sls` in your local dir
 ```
 install_and_start_apache:
     pkg.installed:  
-        - name: apache2
+        - pkgs:
+            - apache2
+            - curl
 welcome_page:
     file.managed:
         - name:  /var/www/html/index.html
@@ -37,12 +46,8 @@ apache2_run:
     cmd.run:
         - name: /usr/sbin/service  apache2 restart > /dev/null 2>&1
 ```
-Configure salt-master local file root
-```
-kubectl exec smaster-0 -- echo "file_roots: /srv/salt">>/etc/salt/master
-kubectl exec smaster-0 -- /etc/init.d/salt-master stop
-```
-Wait for 1 min, then run the below to add state file
+
+Run the below to add state file
 ```
 kubectl exec smaster-0 -- mkdir -p /srv/salt
 kubectl cp top.sls smaster-0:/srv/salt/top.sls
@@ -78,7 +83,7 @@ kubectl exec smaster-0 -- salt \* cmd.run "service apache2 status"
 #### 5. Try to access the default webpage hosted by apache server on any one of minion
 
 ```
-kubectl exec smaster-0 ---salt sminion-0 cmd.run "curl -i http://localhost/"
+kubectl exec smaster-0 -- salt sminion-0.sminion.default.svc.cluster.local cmd.run "curl -i http://localhost/"
 
 ```
 The webpage output should return post running the command. The flag will be hidden somewhere in the output. 
