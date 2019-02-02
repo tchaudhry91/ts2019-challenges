@@ -23,6 +23,10 @@ vagrant box add --name laptop laptop.box
 
 cd ~ && git clone https://github.com/dneff/ts2019-challenges.git
 
+cd ${HOME}/ts2019-challenges && sudo hugo -s docs -d /var/www/html -b "http://localhost:1313"
+sudo sed -i 's/80/1313/' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+
 echo 'Host devops
    User vagrant
    StrictHostKeyChecking no
