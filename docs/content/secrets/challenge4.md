@@ -55,5 +55,5 @@ Read more about vault policy which can be used to provide fine grain access of s
 
 Post-challenge clean up:
 
-- `cd /vagrant/ts2019-challenges/challanges/devops/secrets/`
+- `cd /vagrant/challanges/devops/secrets/`
 - `./destroy.sh`
