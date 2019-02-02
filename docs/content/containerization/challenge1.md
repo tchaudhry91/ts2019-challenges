@@ -18,7 +18,7 @@ other state to manage. You'd like to keep it simple.
 
 ### Verify pre-requisites
 
--   SSH into your  environment with `ssh techops` if not already in that
+-   SSH into your  environment with `ssh devops` if not already in that
     environment
 -   Verify Kubernetes is working with
 
