@@ -37,7 +37,7 @@ kubectl exec smaster-0 -- salt-key -L
 kubectl exec -it smaster-0 -- salt-key -A
 ```
 
-Now check salt-minions are able to be seen from salt-master
+Now check salt-minions are able to be seen from salt-master (it may a take a few seconds to work)
 
 ```
 $ kubectl exec smaster-0 -- salt \* test.ping
@@ -46,7 +46,7 @@ $ kubectl exec smaster-0 -- salt \* test.ping
 ### Lets Try one more thing. Who all are running the show in the farm minions?
 
 ```
-$ kubectl exec smaster-0 -- salt \* cmd.run "whoami'
+$ kubectl exec smaster-0 -- salt \* cmd.run "whoami"
 ```
 
 So we learnt how salt provides an easy command line interface to query any information from multiple servers(termed minions). Lets get on some real challenge.
