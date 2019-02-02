@@ -39,7 +39,7 @@ apache2_run:
 ```
 Configure salt-master local file root
 ```
-kubectl exec smaster-0 -- echo "file_roots: /srv/salt">>/etc/salt/master
+kubectl exec smaster-0 -- bash -c 'echo "file_roots: /srv/salt">>/etc/salt/master'
 kubectl exec smaster-0 -- /etc/init.d/salt-master stop
 ```
 Wait for 1 min, then run the below to add state file
