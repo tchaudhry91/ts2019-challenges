@@ -26,7 +26,7 @@ The above command should provide information about package details if it is alre
 #### 3. Install the package on minion which dont have installed obtained from step-2 
 
 ```
-kubectl get pods | grep sminion  | awk '{print $1}' | xargs -I {} kubectl exec {} apt-get install apache2
+kubectl get --no-headers=true pods -l name=sminion -o custom-columns=:metadata.name | xargs -I {} kubectl exec {} -- bash -c "apt-get update && apt-get install -y apache2"
 ```
 Ensure that there should not be any error returned in the output. 
 
