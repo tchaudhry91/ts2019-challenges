@@ -30,7 +30,7 @@ To start the challenge you have to login to vault as root.
   - `vault login <token-retrieved-from-step_2>`
 
 4. Find and retrieve the key inside the cubbyhole to solve the challenge
- - `vault read cubbyhole/<path-retrieved-from-step2>`
+ - `vault read <path-retrieved-from-step2>`
 
 5. Voila the Flag is revealed to you. Congrats for completing this challenge. 
 
