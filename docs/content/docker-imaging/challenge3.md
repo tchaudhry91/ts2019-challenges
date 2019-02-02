@@ -31,9 +31,16 @@ You do some math. < 1KB of code. ~10Mb of requirement library. Hmm. Definitely !
 
 #### Step 3: Smaller alternatives
 
-The previous step should have made it clear by now. You need to choose your `FROM` statement carefully. The system contains a couple of pre-baked images on your system that can be used instead of `localhost:32000/python:3`. Look them up with:
+The previous step should have made it clear by now. You need to choose your `FROM` statement carefully. The system contains a couple of pre-baked images on your system that can be used instead of `localhost:32000/python:3`. Try them out with:
+
+`docker pull localhost:32000/python:3-slim`
+
+`docker pull localhost:32000/python:3-alpine`
+
+After pulling the images, inspect them with the following command:
 
 `docker images -a | grep python`
+
 
 (NOTE: If you're following on at home, please look them up at `https://hub.docker.com/_/python/` instead.)
 

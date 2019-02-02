@@ -9,7 +9,7 @@ First a little bit of setup, run the following command to get a local pypi serve
 
 And enable the validator : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
 
-Now, let's dockerize a hello-world app! Grab the python-hello-world repository and try running the python example in it.
+Now, let's dockerize a hello-world app! Go to the `python-hello-world` directory in the beginner-challenge-1 and try running the python example in it.
 
 
 ```bash
