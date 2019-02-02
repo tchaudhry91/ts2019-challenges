@@ -23,7 +23,7 @@ The developr team wants to deploy the image `localhost:3200/saykumar/ts2019:l2s1
 
 ### Verify pre-requisites
 
--   SSH into your Vagrant environment with `vagrant ssh` if not already in that
+-   SSH into your environment with `ssh devops` if not already in that
     environment
 -   Verify Kubernetes is working with
 
