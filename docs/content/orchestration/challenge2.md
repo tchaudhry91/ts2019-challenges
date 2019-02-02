@@ -16,7 +16,7 @@ Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instruction
 kubectl exec smaster-0 -- salt \* cmd.run "cat /etc/hosts"
 ```
 
-#### 2. Find out a package  name "emacs" whether it is installed across all the servers
+#### 2. Find out a package  name "apache2" whether it is installed across all the servers
 
 ```
 kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
@@ -36,7 +36,7 @@ Ensure that there should not be any error returned in the output.
 kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l apache2"
 ```
 
-If you get an output which displays all the minons have the emacs installed. 
+If you get an output which displays all the minons have the apache2 installed. 
 Imagine the pain eradicated for having to individually sshing and finding out these details across hunders of servers. 
 
 #### 5. Your key will be combination of string written below and minion name 

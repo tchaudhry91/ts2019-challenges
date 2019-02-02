@@ -1,9 +1,0 @@
-FROM ubuntu:bionic
-
-RUN  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg1 salt-minion curl apache2 \
-     && service apache2 start
-
-COPY salt-minion/setup.sh /opt/setup.sh
-COPY source/index.html /var/www/html/index.html
-
-ENTRYPOINT ["bash","/opt/setup.sh"]
