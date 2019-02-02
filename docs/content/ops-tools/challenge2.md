@@ -7,6 +7,10 @@ weight = 10
 Start environment
 
 ```
+cd /vagrant/challanges/devops/ops-tools/
+```
+
+```
 ./start.sh
 ```
 

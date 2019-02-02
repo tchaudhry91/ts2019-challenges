@@ -6,8 +6,13 @@ weight = 15
 Challenge 3 - Find top webserver syscalls
 
 
-
 Start environment
+
+
+```
+cd /vagrant/challanges/devops/ops-tools/
+```
+
 
 ```
 ./start.sh

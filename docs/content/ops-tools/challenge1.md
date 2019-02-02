@@ -7,6 +7,12 @@ Challenge 1
 
 Start environment
 
+
+```
+cd /vagrant/challanges/devops/ops-tools/
+```
+
+
 ```
 ./start.sh
 ```
