@@ -9,5 +9,5 @@ challenge-reset:
 	vagrant up
 
 challenge-reset-quick:
-    git reset --hard
-    git clean -f -d
+	git reset --hard
+	git clean -f -d
