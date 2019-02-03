@@ -3,6 +3,14 @@ title = "Challenge 1"
 weight = 5
 +++
 
+0. Start environment
+
+```
+ssh devops
+cd /vagrant/challanges/devops/monitoring
+./start.sh
+```
+
 1. Deploy the 2 hashing services with the following kubernetes yml:
 
   - `kubectl --namespace=ts2019-mon create -f deploy-hashers.yml`</br>
