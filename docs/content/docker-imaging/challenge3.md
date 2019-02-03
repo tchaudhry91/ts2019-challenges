@@ -3,6 +3,13 @@ title = "Challenge 3"
 weight = 15
 +++
 
+### Setup environment
+```
+ssh devops
+cd /vagrant/challanges/devops/docker-imaging/intermediate-challenge-2/
+./start.sh
+```
+
 ### Optimizing container size
 
 You fixed your layers! Yet, the internet backlash continues. Now, they're throwing around phrases like 'bloated image'...someone has even used the word 'fat'. Yet, you stay determined to make this work.

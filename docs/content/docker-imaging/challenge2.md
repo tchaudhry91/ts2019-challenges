@@ -3,6 +3,13 @@ title = "Challenge 2"
 weight = 10
 +++
 
+### Setup environment
+```
+ssh devops
+cd /vagrant/challanges/devops/docker-imaging/intermediate-challenge-1
+./start.sh
+```
+
 ### Managing Docker image layers
 
 So, you built a working docker image in the previous challenge. Some random people on the internet complained about inefficient layer management and what not. But what do they know!? The container works! 
@@ -13,7 +20,7 @@ Easy stuff.
 docker build...docker run...
 
 #### Step 1: Retry the docker build command.
-In the `intermediate-challenge-1/python-hello-worlds` directory, try:
+In the `/vagrant/challanges/devops/docker-imaging/intermediate-challenge-1/python-hello-worlds` directory, try:
 
 `docker build -t "hello-worlds-python" .`
 
