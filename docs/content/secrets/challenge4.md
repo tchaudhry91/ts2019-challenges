@@ -18,7 +18,6 @@ cd /vagrant/challanges/devops/secrets/
 
   1. Start vault-server, vault-client and login to vault
 
-    - `cd /vagrant/challanges/devops/secrets/`
     - `./start-vaultchallenge4.sh`
     - `./login-vault-client.sh`
 

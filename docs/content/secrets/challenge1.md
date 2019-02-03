@@ -15,8 +15,6 @@ cd /vagrant/challanges/devops/secrets/
 
 1. Star-lord should start Vault Server and Client. Use the following:
     
-    - `ssh devops`
-    - `cd /vagrant/challanges/devops/secrets/`
     - ` ./start-vaultchallenge1.sh`
     - ` ./login-vault-client.sh`
 

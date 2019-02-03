@@ -18,7 +18,6 @@ cd /vagrant/challanges/devops/secrets/
 
 1. Begin the challenge by starting  vault-server, vault-client and authenticating as root:
 
-  - `cd /vagrant/challanges/devops/secrets/`
   - `./start-vaultchallenge2.sh`
   - `./login-vault-client.sh`
   - `vault login root`
