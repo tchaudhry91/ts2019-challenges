@@ -33,7 +33,8 @@ The above command should provide information about package details if it is alre
 
 ```
 kubectl exec sminion-0 -- bash -c "apt-get update && apt-get install -y lighttpd"
-```	
+```
+
 
 Ensure that there should not be any error returned in the output. 
 
@@ -43,8 +44,6 @@ Ensure that there should not be any error returned in the output.
 kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l lighttpd"
 ```
 
-If you get an output which displays all the minons have the lighttpd installed. 
-Imagine the pain eradicated for having to individually sshing and finding out these details across hunders of servers. 
 
 #### 5. Your key will be combination of string written below and lighttpd version (major.minor.patch)
 
