@@ -44,12 +44,15 @@ Let's start with how to create stages and move further.
             - In Syntax Generator , select 'stage:Stage' for Sample step and provide a stage
               name to generate the script. Copy this code and paste it to other browser
               where we have started creating a new job in Step5 under Script. Code will look like
-              this:
+              this (observe we have added node code, which is advanced for this challenge, but make sure you add it to the code)
 
         ```
-        stage('Create Dir')
+        node
+        {
+          stage('StageName')
         {
           code block
+        }
         }
         ```
     -  _**Create Ouput Directory(Stage1):**_
@@ -68,20 +71,23 @@ Let's start with how to create stages and move further.
         ```
          stage ('Create File')
          {
-            sh 'cd output && touch file_`date+F%+T%+N%`'
+            sh 'cd output && touch file_`date +%F-%T-%N`.txt'
          }
         ```
     - _**Code With Stage1 and Stage2:**_
           - Code so far should look like
 
           ```
-          stage('Create Dir')
+          node
+          {
+            stage('Create Dir')
           {
             sh 'mkdir -p output'
           }
           stage ('Create File')
           {
-             sh 'cd output && touch file_`date+F%+T%+N%`'
+             sh 'cd output && touch file_`date +%F-%T-%N`.txt'
+          }
           }
           ```
 
@@ -95,7 +101,7 @@ Let's start with how to create stages and move further.
     _**Tip**:_ In order to edit the job code, follow the same procedure mentioned in step2 but for the job that is newly created. In case if you haven't found the job , browse to [URL](http://192.168.33.10/) and can see list of all pipelines
 
 10. To get flag for this challenge, check the output of printing file
-   "/basicflag.txt/" under console output for successful build, copy the content ,go to
+   "/basicflag.txt" under console output for successful build, copy the content ,go to
    [Utility](http://192.168.33.10/script) and run the command _**println(hudson.util.Secret.decrypt("contents of basicflag.txt"))**_
 
 **MORE HINTS**
