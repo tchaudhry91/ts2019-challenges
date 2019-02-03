@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git reset --hard
+git clean -f -d
+  
 kubectl delete -f k8s/smaster.yaml
 kubectl delete -f k8s/sminion.yaml
 
