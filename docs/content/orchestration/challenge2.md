@@ -5,10 +5,15 @@ weight = 5
 
 Challenge 2 - Remote Execution
 
+### Start environment, and bring up salt master and minions 
+
+```
+ssh devops
+cd /vagrant/challanges/devops/orchestration
+./setup.sh
+```
+
 ## Install missing Package using salt cmd.run
-
-Follow  http://localhost:1313/orchestration/challenge2/ for detailed Instructions
-
 
 ### 1. Determine the os details of the servers running in salt stack
 

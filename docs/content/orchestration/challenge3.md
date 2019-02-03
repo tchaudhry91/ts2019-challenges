@@ -5,9 +5,16 @@ weight = 15
 
 Challenge 3 - Configuration Management
 
+### Start environment, and bring up salt master and minions 
+
+```
+ssh devops
+cd /vagrant/challanges/devops/orchestration
+./setup.sh
+```
+
 ## Apply Salt states to configure a server cluster with lighttpd 
 
-Follow  http://localhost:1313/orchestration/challenge3/ for detailed Instructions 
 
 If you have gone through previous challenge you can realise doing changes during remote execution for small tasks is easy using command line but bigger and complex orcestration which need to do multiple changes there need to be better way. 
 This Challenge introduces applying Salt states to configure a lighttpd server as well as update index.html file. 

@@ -13,7 +13,7 @@ Start environment, and bring up salt master and minions
 
 ```
 ssh devops
-cd /vagrant/challanges/devops/monitoring
+cd /vagrant/challanges/devops/orchestration
 ./setup.sh
 ```
 
