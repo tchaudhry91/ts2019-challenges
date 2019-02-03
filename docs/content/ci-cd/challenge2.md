@@ -74,6 +74,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
             }
             },
             failFast: true|false
+        }
         ```
   - Stage3: Archive text files and sleep  
       - copy below script block and paste it in script editor
@@ -102,11 +103,21 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
         ```
 7. Click on `Save` button and this will redirect you to pipeline menu
 8. Click on `Build Now` to run the `parpipe` job pipeline
-9. Ensure that the build completed successfully
+   _**Tip**:_ Job will fail for the first time. Got to console output. To solve it
+          - Go to console output and search for a hyperlink "Administrators can decide whether to approve or reject this signature."
+          - click on the hyperlink and script approval page will open
+          - Click on Approve button
+9. Go back to `parpipe` [job](http://192.168.33.10/job/parpipe) and click on `Build Now`
+10. Ensure that the build completed successfully
 
     _**Tip**:_ All stages should be in `Green` under `Stage View`.
-10. To check the output:
+    
+11. To check the output:
   - click on the Build number under `Build History`. This will take you to the build run page
   - click on `Console Output` on left menu
   - search for string that starts with `techsummit<>` in console output
   - This string is the flag for this challenge
+
+
+
+    _**^^^^^^^^^^^^^^ Congratulations and Greattt Job!!!! ^^^^^^^^^^^^^^**_
