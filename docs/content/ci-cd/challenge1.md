@@ -21,7 +21,7 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
 ```
 sh 'mkdir -p test'
 ```
-5. Now, we the information from step 3 and step 4 ,Let's create a new Jenkins job with the following 4 stages
+5. Now, with the information from step 3 and step 4 ,Let's create a new Jenkins job with the following 4 stages
 
   - Create ouput directory
   - Create a file in the directory and write some text
