@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: kube-monkey-config-map
-  namespace: smart-a-app
+  namespace: kube-system
 data:
   config.toml: |
     [kubemonkey]

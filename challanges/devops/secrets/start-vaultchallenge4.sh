@@ -2,7 +2,10 @@
 #set -e
 kubectl delete -f k8s/vaultchallenge1-deployment.yaml
 kubectl delete -f k8s/vaultchallenge2-deployment.yaml
+kubectl delete -f k8s/vaultchallenge3-deployment.yaml
+kubectl delete -f k8s/vaultclient-deployment.yaml
 kubectl delete -f k8s/vaultserver-deployment.yaml
+kubectl delete -f k8s/vaultclient-volume.yaml
 
 kubectl apply -f k8s/vaultserver-challenge3-deployment.yaml
 kubectl apply -f k8s/vaultserver-service.yaml
