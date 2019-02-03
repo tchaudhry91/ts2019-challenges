@@ -33,7 +33,8 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
   - Make sure `Pipeline script` is selected for Definition
 
       _**Tip:**_
-            - Now our script has to be written under the script editor in pipeline section(Refer to snapshot)
+            - Now our script has to be written under the script editor in pipeline section(Refer to screenshot)
+            ![Script Editor](/images/Jenkins.png)
 
 6. Let's create pipeline stages
   - Stage1: Create output directory
