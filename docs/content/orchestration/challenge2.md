@@ -33,6 +33,7 @@ The above command should provide information about package details if it is alre
 ```
 kubectl exec sminion-0 -- bash -c "apt-get update && apt-get install -y lighttpd"
 ```	
+
 Ensure that there should not be any error returned in the output. 
 
 #### 4. Validate again for consistent state across all the minions
