@@ -15,5 +15,8 @@ Vagrant.configure("2") do |config|
      vb.customize [ "modifyvm", :id, "--uart1", "0x3F8", "4" ]
      vb.customize [ "modifyvm", :id, "--uartmode1", "file", File.join(Dir.pwd, "ubuntu-bionic-18.04-cloudimg-console.log") ]
   end
-  config.vm.provision "shell", inline: "microk8s.status --wait-ready && iptables -P FORWARD ACCEPT && microk8s.inspect"
+  config.vm.provision "shell", inline: "microk8s.status --wait-ready"
+  config.vm.provision "shell", inline: "sleep 5; microk8s.status --wait-ready"
+  config.vm.provision "shell", inline: "iptables -P FORWARD ACCEPT"
+  config.vm.provision "shell", inline: "microk8s.inspect"
 end

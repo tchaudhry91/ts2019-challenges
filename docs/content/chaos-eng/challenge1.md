@@ -16,7 +16,7 @@ There should be four files on the filesystem: configmap-debug.yaml, km-deploy.ya
   - `./start.sh` 
 
 3. Deploy the app with kube-monkey enabled
-  - `kubectl apply -f <file 1>.yaml`
+  - `kubectl create -f <file 1>.yaml`
   - `kubectl create -f <file 2>.yaml`
   - `kubectl create -f <file 3>.yaml`
   - `kubectl create -f <file 4>.yaml`
@@ -25,4 +25,7 @@ There should be four files on the filesystem: configmap-debug.yaml, km-deploy.ya
   - `watch kubectl get pods --namespace=smart-a-app`
 
 #### In what order were the files deployed?
-(Use the first letter of each file as your answer.)
+1. Which 1 yaml file must to be deployed before monkey-victim.yaml? 
+2. Which 1 yaml file must to be deployed before km-deploy.yaml? 
+
+Enter flag in the order of <your anwser of 1>,<your answer of 2> Eg. abc.yaml,123.yaml

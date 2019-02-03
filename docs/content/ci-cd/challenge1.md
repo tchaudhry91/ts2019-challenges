@@ -17,7 +17,6 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
 3. If you are new to Jenkins please refer to Appendix1 and Appendix2 at the end.
 
 4. create a new Jenkins job with the following 4 stages
-
   - Create output directory
   - Create a file in the directory and write some text
         - Change directory
