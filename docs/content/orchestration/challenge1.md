@@ -9,9 +9,11 @@ Challenge 1 - Configure salt-master and salt-minion
 
 ### Verify the number of minons in the Salt Stack farm
 
-In dir, bring up salt master and minions 
+Start environment, and bring up salt master and minions 
 
 ```
+ssh devops
+cd /vagrant/challanges/devops/monitoring
 ./setup.sh
 ```
 
