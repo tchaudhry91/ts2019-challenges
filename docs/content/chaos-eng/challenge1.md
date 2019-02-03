@@ -8,13 +8,15 @@ weight = 5
 There should be four files on the filesystem: configmap-debug.yaml, km-deploy.yaml, monkey-victim.yaml, namespace.yaml. Use these to deploy kube-monkey in your cluster.
 
 
-1. Navigate to repo 
-  - `cd /vagrant/challanges/devops/chaos-engineering/`
+1. Start environment
+  - `ssh devops`
 
-2. Enable kube-monkey using the config file
-  - `kubectl apply -f <file 1>.yaml`
+2. Navigate to repo
+  - `cd /vagrant/challanges/devops/chaos-engineering/` 
+  - `./start.sh` 
 
 3. Deploy the app with kube-monkey enabled
+  - `kubectl apply -f <file 1>.yaml`
   - `kubectl create -f <file 2>.yaml`
   - `kubectl create -f <file 3>.yaml`
   - `kubectl create -f <file 4>.yaml`

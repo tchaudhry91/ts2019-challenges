@@ -65,14 +65,14 @@ kubectl exec smaster-0 -- salt \* state.clear_cache
 Check the state file and run in it test mode to see what all configuration will be changed
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top test=True
+kubectl exec smaster-0 -- salt \* state.apply top test=True
 ```
 The above command will provide Changes which will occur on minions once the state will be applied before actually making changes. You should notice that applying this SLS file will install apache2, copy the index.html to the default folder and start the service.  
 
 #### 3. Finally apply the state on all the minions 
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top | more 
+kubectl exec smaster-0 -- salt \* state.apply top
 ```
 The above command will actually make the desired configuration changes. The advantage of states can be found by tre running above command again. States are idempotent, if the configuration is already applied no rerun will occur. 
 
@@ -83,16 +83,19 @@ kubectl exec smaster-0 -- salt \* cmd.run "service apache2 status"
 #### 5. Try to access the default webpage hosted by apache server on any one of minion
 
 ```
-kubectl exec smaster-0 -- salt sminion-0.sminion.default.svc.cluster.local cmd.run "curl -i http://localhost/"
+kubectl exec smaster-0 -- salt sminion-0\* cmd.run "curl -i http://localhost/"
 
 ```
-The webpage output should return post running the command. The flag will be hidden somewhere in the output. 
+The webpage output should return post running the command. 
+
+The flag for this challenge is the first line of body. Please enter to win points!
+ 
 Congratulations for completing the challenge.
 
 ### 6. Optional - See what happens if you try to apply the states again.
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top | more 
+kubectl exec smaster-0 -- salt \* state.apply top
 ```
 The advantage of salt states are they are idempotent. What does that mean is it will not rerun 
 

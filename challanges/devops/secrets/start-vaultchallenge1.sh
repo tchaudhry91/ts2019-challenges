@@ -1,5 +1,10 @@
 #!/bin/bash
 set -e
-./start-vaultchallenge0.sh
-kubectl apply -f k8s/vaultchallenge1-deployment.yaml
-kubectl rollout status deployment/vaultchallenge1
+
+kubectl apply -f k8s/vaultserver-deployment.yaml
+kubectl apply -f k8s/vaultserver-service.yaml
+kubectl rollout status deployment/vaultserver
+
+kubectl apply -f k8s/vaultclient-volume.yaml
+kubectl apply -f k8s/vaultclient-deployment.yaml
+kubectl rollout status deployment/vaultclient
