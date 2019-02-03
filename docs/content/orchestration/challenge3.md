@@ -5,12 +5,19 @@ weight = 15
 
 Challenge 3 - Configuration Management
 
-## Apply Salt states to configure a server cluster with apache2 
+### Start environment, and bring up salt master and minions 
 
-Follow  http://localhost:1313/orchestration/challenge3/ for detailed Instructions 
+```
+ssh devops
+cd /vagrant/challanges/devops/orchestration
+./setup.sh
+```
+
+## Apply Salt states to configure a server cluster with lighttpd 
+
 
 If you have gone through previous challenge you can realise doing changes during remote execution for small tasks is easy using command line but bigger and complex orcestration which need to do multiple changes there need to be better way. 
-This Challenge introduces applying Salt states to configure a apache2 server as well as update index.html file. 
+This Challenge introduces applying Salt states to configure a lighttpd server as well as update index.html file. 
 
 ### Salt State file
 The SLS (Salt State File) is a representation of the state in which a system should be in, and is set up to contain this data in a simple format. This is often called configuration management. If you are inetrested read more about Salt state [here](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html)
@@ -29,7 +36,7 @@ copy the content below to create a new file `top.sls` in your local dir
 install_and_start_apache:
     pkg.installed:  
         - pkgs:
-            - apache2
+            - lighttpd
             - curl
 welcome_page:
     file.managed:
@@ -37,14 +44,14 @@ welcome_page:
         - source:  salt://index.html
 # This is throwing error while applying state
 # TypeError: '>' not supported between instances of 'dict' and 'int'
-#apache2:
+#lighttpd:
 #    service.running:
 #        enable: true
 
-# Putting cmd.run to start apache2 service as service module has issues. 
-apache2_run:
+# Putting cmd.run to start lighttpd service as service module has issues. 
+lighttpd_run:
     cmd.run:
-        - name: /usr/sbin/service  apache2 restart > /dev/null 2>&1
+        - name: /usr/sbin/service  lighttpd restart > /dev/null 2>&1
 ```
 
 Run the below to add state file
@@ -65,34 +72,37 @@ kubectl exec smaster-0 -- salt \* state.clear_cache
 Check the state file and run in it test mode to see what all configuration will be changed
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top test=True
+kubectl exec smaster-0 -- salt \* state.apply top test=True
 ```
-The above command will provide Changes which will occur on minions once the state will be applied before actually making changes. You should notice that applying this SLS file will install apache2, copy the index.html to the default folder and start the service.  
+The above command will provide Changes which will occur on minions once the state will be applied before actually making changes. You should notice that applying this SLS file will install lighttpd, copy the index.html to the default folder and start the service.  
 
 #### 3. Finally apply the state on all the minions 
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top | more 
+kubectl exec smaster-0 -- salt \* state.apply top
 ```
 The above command will actually make the desired configuration changes. The advantage of states can be found by tre running above command again. States are idempotent, if the configuration is already applied no rerun will occur. 
 
-#### 4. Validate the apache2 service is running on all the minons 
+#### 4. Validate the lighttpd service is running on all the minons 
 ```
-kubectl exec smaster-0 -- salt \* cmd.run "service apache2 status"
+kubectl exec smaster-0 -- salt \* cmd.run "service lighttpd status"
 ```
 #### 5. Try to access the default webpage hosted by apache server on any one of minion
 
 ```
-kubectl exec smaster-0 -- salt sminion-0.sminion.default.svc.cluster.local cmd.run "curl -i http://localhost/"
+kubectl exec smaster-0 -- salt sminion-0\* cmd.run "curl -i http://localhost/"
 
 ```
-The webpage output should return post running the command. The flag will be hidden somewhere in the output. 
+The webpage output should return post running the command. 
+
+The flag for this challenge is the first line of body. Please enter to win points!
+ 
 Congratulations for completing the challenge.
 
 ### 6. Optional - See what happens if you try to apply the states again.
 
 ```
-kubectl exec smaster-0 -- salt \* state.apply  top | more 
+kubectl exec smaster-0 -- salt \* state.apply top
 ```
 The advantage of salt states are they are idempotent. What does that mean is it will not rerun 
 

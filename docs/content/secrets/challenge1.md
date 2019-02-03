@@ -5,10 +5,17 @@ weight = 4
 
 ### Hello World.
 
-1. Star-lord should start Vault Server and Client. Use the following:
+0. Setup environment
 
-    - `cd /vagrant/challanges/devops/secrets/`
-    - ` ./start-vaultchallenge0.sh`
+```
+ssh devops
+cd /vagrant/challanges/devops/secrets/
+./start.sh
+```
+
+1. Star-lord should start Vault Server and Client. Use the following:
+    
+    - ` ./start-vaultchallenge1.sh`
     - ` ./login-vault-client.sh`
 
 2. Verify the status of the Vault system.
@@ -26,7 +33,7 @@ Initialized     true
 Sealed          false
 Total Shares    1
 Threshold       1
-Version         0.11.5
+Version         1.0.2
 Cluster Name    vault-cluster-81a0bfca
 Cluster ID      eb1f59e2-00b1-82fd-427f-9d8c977b9d19
 HA Enabled      false
@@ -36,6 +43,6 @@ HA Enabled      false
 
 3.Flag is version of the vault server displayed on the output of command in step 2 (remove the "." e.g.= 0.11.5 will become 0115)
 
-  - `dcorchestration<vault-version>`
+  - `ev19secret<vault-version>`
 
 More info: If you are interested to get a primer about vault secret management tool, please see [link](https://www.hashicorp.com/resources/journey-vault-1-0) 

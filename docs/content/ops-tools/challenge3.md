@@ -8,6 +8,9 @@ Challenge 3 - Find top webserver syscalls
 
 Start environment
 
+```
+ssh devops
+```
 
 ```
 cd /vagrant/challanges/devops/ops-tools/
@@ -28,8 +31,10 @@ Login to the server
 Find child process ID (PID) of nginx web server
 Hint: Use `pstree -np`
 
-Find top syscalls using strace tool.
+
 
 Strace is a diagnostic, debugging and instructional userspace utility for Linux. It is used to monitor and tamper with interactions between processes and the Linux kernel, which include system calls, signal deliveries, and changes of process state.
 
 ```timeout 30s strace -c -p <PID>```
+
+Your code will be seen in the output of `strace` command. Code is top syscall from this output.

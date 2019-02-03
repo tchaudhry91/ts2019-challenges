@@ -4,16 +4,28 @@ weight = 5
 +++
 
 ### Hello World
+
+### Setup environment
+```
+ssh devops
+cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/
+./start.sh
+```
+
 First a little bit of setup, run the following command to get a local pypi server that will serve dependencies for our app:
 `cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -`
 
 And enable the validator : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
 
-Now, let's dockerize a hello-world app! Go to the `python-hello-world` directory in the beginner-challenge-1 and try running the python example in it.
+Now, let's dockerize a hello-world app! Go to the 
+```
+cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/python-hello-world/
+```
 
 
 ```bash
 pip3 install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
+
 python3 hello-world.py
 ```
 (yes, 4 years on a rock and tutorials still do 'hello-world', disappointing)

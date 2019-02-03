@@ -3,6 +3,13 @@ title = "Challenge 4"
 weight = 20
 +++
 
+### Setup environment
+```
+ssh devops
+cd /vagrant/challanges/devops/docker-imaging/hard-challenge-1/
+./start.sh
+```
+
 ### Shrink the docker, doctor.
 
 You packaged a python application in a docker image. After some rough internet episodes, it now looks glorious, and you feel confident in your Dockerfile writing skills. You decide to share your knowledge and help people on StackOverflow.
@@ -28,6 +35,6 @@ SETUP : Run the following command: `cd /vagrant/challanges/devops/docker-imaging
 TASK: Rewrite the above Dockerfile so that it still contains the `/unique-access.log` but is as small as possible. There are multiple ways to achieve this and we only care about the final result. You get credit as long as your final image is as small as it can be.
 
 #### Run the following command to get your flag after you have created a new image < 10Mb
-`tsvalidator validate docker chal4 --image {your-image-name}`
+`tsvalidator validate docker chal4 --image challenge4`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`

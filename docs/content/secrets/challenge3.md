@@ -11,10 +11,17 @@ About vault cubbyhole secret engine: The vault cubbyhole secrets engine is used 
 
 To start the challenge you have to login to vault as root.
 
+0. Setup environment
+
+```
+ssh devops
+cd /vagrant/challanges/devops/secrets/
+./start.sh
+```
+
 1. As before, begin with starting vault-server, vault-client and login as root
 
-  - `cd /vagrant/challanges/devops/secrets/`
-  - `./start-vaultchallenge2.sh`
+  - `./start-vaultchallenge3.sh`
   - `./login-vault-client.sh`
   - `vault login root`
 
