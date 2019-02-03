@@ -26,6 +26,7 @@ kubectl exec smaster-0 -- salt \* cmd.run "cat /etc/hosts"
 ```
 kubectl exec smaster-0 -- salt \* cmd.run "dpkg -l lighttpd"
 ```
+
 The above command should provide information about package details if it is already installed.
 
 #### 3. Install the package on sminion-0  
@@ -50,4 +51,5 @@ Imagine the pain eradicated for having to individually sshing and finding out th
 ```
 ev19orchestration<version as major.minor.patch>
 ```
+
 yay! You have reached the end of this Challenge. To recap this challange we learnt about how Salt lets you remotely execute shell commands across multiple systems using cmd.run. To explore a little further there are also multiple execution function which can be used which can further abstract the limitation of os specific commands. See https://docs.saltstack.com/en/getstarted/ssh/remotex.html for few more such examples. 
