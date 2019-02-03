@@ -21,7 +21,6 @@ cd /vagrant/challanges/devops/secrets/
 
 1. As before, begin with starting vault-server, vault-client and login as root
 
-  - `cd /vagrant/challanges/devops/secrets/`
   - `./start-vaultchallenge3.sh`
   - `./login-vault-client.sh`
   - `vault login root`
