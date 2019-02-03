@@ -11,8 +11,7 @@ Identify the kube-monkey processes in your cluster and view their logs to get a 
   - `kubectl get pods -n kube-system`
   - `kubectl logs -f kube-monkey-<#> -n kube-system`
   
-  or 
-  
+  or
   - `kubectl logs deploy/kube-monkey -n kube-system`
   
 #### In the logs, find the value to complete the following log output line: 
