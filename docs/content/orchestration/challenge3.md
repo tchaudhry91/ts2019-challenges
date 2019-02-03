@@ -5,13 +5,7 @@ weight = 15
 
 Challenge 3 - Configuration Management
 
-### Start environment, and bring up salt master and minions 
 
-```
-ssh devops
-cd /vagrant/challanges/devops/orchestration
-./setup.sh
-```
 
 ## Apply Salt states to configure a server cluster with lighttpd 
 
@@ -28,10 +22,13 @@ The SLS (Salt State File) is a representation of the state in which a system sho
 Run setup script to reset environment
 
 ```
+ssh devops
+cd /vagrant/challanges/devops/orchestration
 ./setup3.sh
 ```
 
 copy the content below to create a new file `top.sls` in your local dir
+
 ```
 install_and_start_apache:
     pkg.installed:  
