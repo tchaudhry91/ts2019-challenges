@@ -8,6 +8,14 @@ weight = 15
 Star-lord is tasked to go across galaxy with limited access. This time Thanos has wrapped the key to unlock the galaxy secret. To help Nova has left a clue in the kv locker which if unearthed will pave the way to find and retrieve the master key.
 The access is controlled via policy. 
 
+0. Setup environment
+
+```
+ssh devops
+cd /vagrant/challanges/devops/secrets/
+./start.sh
+```
+
   1. Start vault-server, vault-client and login to vault
 
     - `cd /vagrant/challanges/devops/secrets/`
@@ -52,4 +60,3 @@ Read more about vault policy which can be used to provide fine grain access of s
 
 - __More Hints__
   - If you get message like "	* permission denied" in the response of command, that means you dont have access to the resource. Keep looking for the ones for which you have access. 
-

@@ -5,6 +5,14 @@ weight = 4
 
 ### Hello World.
 
+0. Setup environment
+
+```
+ssh devops
+cd /vagrant/challanges/devops/secrets/
+./start.sh
+```
+
 1. Star-lord should start Vault Server and Client. Use the following:
     
     - `ssh devops`

@@ -11,6 +11,6 @@ k8s/vaultclient-volume.yaml
 "
 
 for cfg in $CFGS; do
-	kubectl delete -f $cfg
+	kubectl delete -f $cfg 2>/dev/null
 done
 
