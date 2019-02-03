@@ -39,17 +39,10 @@ welcome_page:
     file.managed:
         - name:  /var/www/html/index.html
         - source:  salt://index.html
-# This is throwing error while applying state
-# TypeError: '>' not supported between instances of 'dict' and 'int'
-#lighttpd:
-#    service.running:
-#        enable: true
 
-# Putting cmd.run to start lighttpd service as service module has issues. 
-lighttpd_run:
-    cmd.run:
-        - name: /usr/sbin/service  lighttpd restart > /dev/null 2>&1
+
 ```
+Copy the content below to create a new file `top.sls` in your local dir
 
 Run the below to add state file
 ```
@@ -90,9 +83,9 @@ kubectl exec smaster-0 -- salt \* cmd.run "service lighttpd status"
 kubectl exec smaster-0 -- salt sminion-0\* cmd.run "curl -i http://localhost/"
 
 ```
-The webpage output should return post running the command. 
+This command should return HTML code
 
-The flag for this challenge is the first line of body. Please enter to win points!
+The flag for this challenge is CSS background for body
  
 Congratulations for completing the challenge.
 
