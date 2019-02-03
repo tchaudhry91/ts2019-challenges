@@ -8,6 +8,9 @@ Challenge 3 - Find top webserver syscalls
 
 Start environment
 
+```
+ssh devops
+```
 
 ```
 cd /vagrant/challanges/devops/ops-tools/
