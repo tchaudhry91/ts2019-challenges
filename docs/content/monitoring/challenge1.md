@@ -42,4 +42,4 @@ The setup is now complete and you can now explore what prometheus can offer us i
  - **By how much is it out-performing the other service?**</br>
 e.g if blue = `50`ms, red = `500`ms, the answer = `500/50` = `10`.</br>
 Round to nearest integer!
- - **What is the 99 quantile latency for the faster service? (metrics exposed in seconds)**
+ - **What is the 99 quantile latency for the faster service? (metrics exposed in seconds, round to 1 decimal point)**
