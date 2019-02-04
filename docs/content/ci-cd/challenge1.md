@@ -24,6 +24,8 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
   - Print the file "/basicflag.txt"
   - Archive the text file created in output directory.
 
+    _**Note:**_ If you are already aware of jenkins and are able to write the code without any help jump to step7.
+
 5. To create a new job go to [Jenkins](http://192.168.33.10/).
   - On top right corner click on `New Item`
   - Enter `testpipe` as job name
@@ -95,7 +97,11 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
 
 11. To get the Flag
   - Go to [Script Console](http://192.168.33.10/script)
-  - Replace xxx in the `println(hudson.util.Secret.decrypt(”<<xxx“))` command with the string copied in previous step
+  - Replace xxx in the following command with the string copied in previous step
+
+    ```
+        println(hudson.util.Secret.decrypt(”xxx“))
+    ```
   - Click on `Run` button
   - Result obtained is the flag for this challenge
 

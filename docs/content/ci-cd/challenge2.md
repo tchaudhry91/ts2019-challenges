@@ -41,6 +41,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
 
       _**Tip:**_
             - Now our script has to be written under the script editor in pipeline section(Refer to snapshot)
+              ![Script Editor](/images/Jenkins.png)
 
 6. Let's create pipeline stages
   - Stage1: Create 2 output directories with timeout and timestamp set.
@@ -111,7 +112,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
 10. Ensure that the build completed successfully
 
     _**Tip**:_ All stages should be in `Green` under `Stage View`.
-    
+
 11. To check the output:
   - click on the Build number under `Build History`. This will take you to the build run page
   - click on `Console Output` on left menu
