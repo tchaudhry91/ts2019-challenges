@@ -68,7 +68,8 @@ If you completed the above step, you should now be ready to `RUN` your container
 
 `docker run -it --rm hello-world-python`
 
-And voila,  "Hello, World" from a container!
+And voilà,  "Hello, World" from a container!
+
 Notice the difference in the output when running inside a container?
 
 

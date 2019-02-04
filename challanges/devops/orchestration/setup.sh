@@ -15,4 +15,4 @@ kubectl get --no-headers=true pods -l name=sminion -o custom-columns=:metadata.n
 kubectl get --no-headers=true pods -l name=sminion -o custom-columns=:metadata.name | xargs -I {} kubectl exec {} /etc/init.d/salt-minion restart
 
 kubectl exec smaster-0 -- salt-key -L
-kubectl exec -it smaster-0 -- salt-key -A
+kubectl exec -it smaster-0 -- salt-key -A -y
