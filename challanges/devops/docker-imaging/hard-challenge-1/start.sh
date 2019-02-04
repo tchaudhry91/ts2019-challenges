@@ -1,2 +1,2 @@
 #!/bin/bash
-docker rmi challenge4
+docker rmi challenge4 2> /dev/null

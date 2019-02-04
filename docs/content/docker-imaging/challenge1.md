@@ -31,7 +31,7 @@ python3 hello-world.py
 (yes, 4 years on a rock and tutorials still do 'hello-world', disappointing)
 
 
-#### Use a text editor and create a file called 'Dockerfile' in the repo root.
+#### Use a text editor and inspect the file called 'Dockerfile' in the repo root.
 
 `vim Dockerfile`
 
@@ -57,7 +57,7 @@ Here's what the final Dockerfile should look like!
 ```Docker
 FROM localhost:32000/python:3
 COPY . .
-RUN pip install -r requirements.txt
+RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
 CMD python hello-world.py
 ```
 
