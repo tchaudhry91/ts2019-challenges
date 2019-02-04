@@ -2,6 +2,8 @@
 
 
 # cleanup
+git reset --hard
+git clean -f -d
 kubectl delete -f k8s/smaster.yaml
 kubectl delete -f k8s/sminion.yaml
 
@@ -21,4 +23,4 @@ kubectl get --no-headers=true pods -l name=sminion -o custom-columns=:metadata.n
 
 # register minions
 kubectl exec smaster-0 -- salt-key -L
-kubectl exec -it smaster-0 -- salt-key -A -y
+kubectl exec -it smaster-0 -- salt-key -A
