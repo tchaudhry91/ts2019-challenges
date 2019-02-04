@@ -16,11 +16,11 @@ https://github.com/asobti/kube-monkey#opting-in-to-chaos
   - `kubectl describe -f _____.yaml`
   
 3. Verify that 2 pods are being terminated instead of 1
-  - `kubectl get pods -n kube-system`
+  - `kubectl get pods -n smart-a-app`
 
 #### What is the value changed?
 Provide the answer in the form: _**`key: "value"`**_
 
 
 
-<a href="https://ctf.ts2019.adobe.com/challenges#Orchestration3" target="_blank"> Link to enter flag </a> 
+<a href="https://ctf.ts2019.adobe.com/challenges#ChaosEngineering3" target="_blank"> Link to enter flag </a> 
