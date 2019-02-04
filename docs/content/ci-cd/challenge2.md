@@ -120,5 +120,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
   - This string is the flag for this challenge
 
 
+<a href="https://ctf.ts2019.adobe.com/challenges#CI/CD%202" target="_blank"> Link to enter flag </a> 
+
 
     _**^^^^^^^^^^^^^^ Congratulations and Greattt Job!!!! ^^^^^^^^^^^^^^**_

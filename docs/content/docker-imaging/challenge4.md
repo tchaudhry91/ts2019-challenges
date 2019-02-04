@@ -38,3 +38,5 @@ TASK: Rewrite the above Dockerfile so that it still contains the `/unique-access
 `tsvalidator validate docker chal4 --image challenge4`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
+
+<a href="https://ctf.ts2019.adobe.com/challenges#DockerImaging4" target="_blank">Link to enter flag </a> 

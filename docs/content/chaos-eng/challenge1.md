@@ -29,3 +29,6 @@ There should be four files on the filesystem: configmap-debug.yaml, km-deploy.ya
 2. Which 1 yaml file must to be deployed before km-deploy.yaml? 
 
 Enter flag in the order of <your anwser of 1>,<your answer of 2> Eg. abc.yaml,123.yaml
+
+ 
+<a href="https://ctf.ts2019.adobe.com/challenges#ChaosEngineering1" target="_blank"> Link to enter flag </a> 

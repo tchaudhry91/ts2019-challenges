@@ -33,8 +33,13 @@ If you don't see an output similar to this, please get in touch with a volunteer
     NAME            STATUS   ROLES    AGE   VERSION
     ubuntu-bionic   Ready    <none>   19h   v1.12.4
 
--   Make a folder for this challenge, `mkdir ch2`
--   Get into that folder `cd ch2`
+### Initialize environment 
+
+```
+cd /vagrant/challanges/devops/containerization/
+./start.sh
+```
+
 
 
 ## Step 1
@@ -190,9 +195,11 @@ This instructs Nginx (which is an `ingress controller` in k8s terminology) to
 point requests to `/hello` to the service `app2` that we defined above.
 
 Once this is done, refresh your browser, and you should be able to scroll the
-new frame and see your code to advance!
+new frame and see your flag to advance!
 
 ![img](/containerization/l2s3.png)
+
+<a href="https://ctf.ts2019.adobe.com/challenges#Containerization2" target="_blank">Link to enter flag </a> 
 
 
 ## Conclusion
@@ -201,6 +208,3 @@ With these steps, you've now deployed 2 micro-services, served them on the same
 IP under 2 different HTTP paths. This has the beginnings of a web application,
 and you are growing fast as the DevOps support for the team! Congratualations!
 
-Clean up your Kubernetes cluster by running `kubectl delete -f .` in the folder.
-This will delete resources corresponding to every YAML file in the current
-directory.

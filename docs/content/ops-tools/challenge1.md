@@ -36,3 +36,6 @@ Get webserver version using `nmap` tool.
 
 
 Your code will be seen in the output of `nmap` command. Use only version number without webserver name
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#OpsToolKit1" target="_blank">Link to enter flag </a> 

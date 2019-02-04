@@ -28,11 +28,15 @@ If you don't see an output similar to this, please get in touch with a volunteer
     NAME            STATUS   ROLES    AGE   VERSION
     ubuntu-bionic   Ready    <none>   19h   v1.12.4
 
--   Make a folder for this challenge, `mkdir ch1`
--   Get into that folder `cd ch1`
-
 
 ## Step 1
+
+### Initialize environment 
+
+```
+cd /vagrant/challanges/devops/containerization/
+./start.sh
+```
 
 
 ### Writing YAML
@@ -228,15 +232,13 @@ Notice how the output of `curl` keeps changing. Kubernetes phases out instances 
 old image and brings up new images. During this entire period, no service interruption 
 occurs.
 
-Your code will be seen in the output of `curl`. Enter that in the text box
+Your flag will be seen in the output of `curl`. Enter that in the text box
 for the challenge screen to complete this challenge!
+
+<a href="https://ctf.ts2019.adobe.com/challenges#Containerization1" target="_blank">Link to enter flag </a> 
 
 ## Conclusion
 
 And that brings you to the end of this hands on session - you learnt how to
 deploy a container, expose it outside the cluster, scale it up and upgrade it.
 All without any impact to the service availability.
-
-Clean up your Kubernetes cluster by running `kubectl delete -f .` in the folder.
-This will delete resources corresponding to every YAML file in the current
-directory.

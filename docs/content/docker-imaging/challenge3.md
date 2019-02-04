@@ -66,3 +66,5 @@ Re-check the size of your image and post the output:
 `tsvalidator validate docker chal3 --image hello-worlds-python:slim`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
+
+<a href="https://ctf.ts2019.adobe.com/challenges#DockerImaging3" target="_blank">Link to enter flag </a> 

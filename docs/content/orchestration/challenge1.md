@@ -34,3 +34,7 @@ So we learnt how salt provides an easy command line interface to query any infor
 Your flag to solve the challenge is - *ev19orchestration{number of minions}*.
 
  _Note:_ : Remove curly braces and just enter the number of minions
+
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#Orchestration1" target="_blank">Link to enter flag </a> 
