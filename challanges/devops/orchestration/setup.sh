@@ -3,8 +3,8 @@
 git reset --hard
 git clean -f -d
   
-kubectl delete -f k8s/smaster.yaml
-kubectl delete -f k8s/sminion.yaml
+kubectl delete -f k8s/smaster.yaml 2>/dev/null
+kubectl delete -f k8s/sminion.yaml 2>/dev/null 
 
 
 kubectl create -f k8s/smaster.yaml
