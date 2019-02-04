@@ -1,2 +1,2 @@
 #!/bin/bash
-docker rmi hello-world-python
+docker rmi hello-world-python 2> /dev/null
