@@ -41,6 +41,9 @@ cd /vagrant/challanges/devops/secrets/
 
 5. Voila the Flag is revealed to you. Congrats for completing this challenge. 
 
+<a href="https://ctf.ts2019.adobe.com/challenges#SecretsMgmt3" target="_blank">Link to enter flag </a> 
+
+
 If you are  interested further you may read more about vault [cubbyhole](https://www.vaultproject.io/docs/secrets/cubbyhole/index.html)
 
 _**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory

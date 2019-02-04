@@ -76,3 +76,5 @@ Notice the difference in the output when running inside a container?
 #### Run the following command to get your flag after you have executed your docker build instruction!
 
 `tsvalidator validate docker chal1 --image hello-world-python`
+
+<a href="https://ctf.ts2019.adobe.com/challenges#DockerImaging1" target="_blank">Link to enter flag </a> 

@@ -52,3 +52,5 @@ ev19orchestration<version as major.minor.patch>
 ```
 
 yay! You have reached the end of this Challenge. To recap this challange we learnt about how Salt lets you remotely execute shell commands across multiple systems using cmd.run. To explore a little further there are also multiple execution function which can be used which can further abstract the limitation of os specific commands. See https://docs.saltstack.com/en/getstarted/ssh/remotex.html for few more such examples. 
+
+<a href="https://ctf.ts2019.adobe.com/challenges#Orchestration2" target="_blank">Link to enter flag </a> 

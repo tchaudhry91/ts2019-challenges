@@ -49,6 +49,9 @@ cd /vagrant/challanges/devops/secrets/
 
   Enter the flag value in the CTFd portal to complete the challenge. Here is some awesome work done to save the Adobe galaxy from Thanos and reclaim order. ;o) 
 
+<a href="https://ctf.ts2019.adobe.com/challenges#SecretsMgmt4" target="_blank">Link to enter flag </a> 
+
+
   8.__Optional step__ : vault unwrap provides mechanism to share one time password with any unauthenticated user. Try to run the same command again to see if you can reveal the flag again or not. 
 
  - `vault unwrap <token-obtained-from-step4>`

@@ -51,3 +51,6 @@ HINT: Try copying your app into the container in 2 different steps.
 `tsvalidator validate docker chal2 --image hello-worlds-python`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#DockerImaging2" target="_blank">Link to enter flag </a> 

@@ -12,3 +12,5 @@ Identify the kube-monkey processes in your cluster and view their logs to get a 
   
 #### In the logs, find the value to complete the following log output line: 
   `Status Update: Generating next schedule in ?? sec`
+
+<a href="https://ctf.ts2019.adobe.com/challenges#Containerization2" target="_blank"> Link to enter flag </a> 

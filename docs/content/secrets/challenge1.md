@@ -46,3 +46,6 @@ HA Enabled      false
   - `ev19secret<vault-version>`
 
 More info: If you are interested to get a primer about vault secret management tool, please see [link](https://www.hashicorp.com/resources/journey-vault-1-0) 
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#SecretsMgmt1" target="_blank">Link to enter flag </a> 

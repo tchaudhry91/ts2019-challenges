@@ -38,3 +38,6 @@ Strace is a diagnostic, debugging and instructional userspace utility for Linux.
 ```timeout 30s strace -c -p <PID>```
 
 Your code will be seen in the output of `strace` command. Code is top syscall from this output.
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#OpsToolKit3" target="_blank">Link to enter flag </a> 

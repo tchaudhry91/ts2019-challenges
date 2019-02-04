@@ -105,6 +105,8 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
   - Click on `Run` button
   - Result obtained is the flag for this challenge
 
+  <a href="https://ctf.ts2019.adobe.com/challenges#CI/CD%201" target="_blank"> Link to enter flag </a> 
+
          _**^^^^^^^^^^^^^^ Hurray!!!! You solved the challenge. Let's do one more ^^^^^^^^^^^^^^**_
 
 

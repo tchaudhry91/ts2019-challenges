@@ -29,3 +29,6 @@ cd /vagrant/challanges/devops/secrets/
 To get started, try running `vault kv list /secret` and keep going until you see the key!
 
 _**Hint (if you are stuck at step-2)**_: vault kv secrets are stored in hierarchial paths, think unix files and directory
+
+
+<a href="https://ctf.ts2019.adobe.com/challenges#SecretsMgmt2" target="_blank">Link to enter flag </a> 
