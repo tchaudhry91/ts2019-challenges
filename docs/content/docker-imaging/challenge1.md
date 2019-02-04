@@ -43,7 +43,7 @@ So, we already have a base image with everything python needs to run in it. Let'
 What's left? We have the interpreter, we have the code. Let's `RUN` the dependency gathering.
 (Note: This app doesn't really need the dependency, but we've put it in here to explain the RUN command)
 
-`RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt`
+`RUN pip install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt`
 
 Now, tell the container what `COMMAND` to run when it's started.
 
@@ -54,7 +54,7 @@ Here's what the final Dockerfile should look like!
 ```Docker
 FROM localhost:32000/python:3
 COPY . .
-RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
+RUN pip install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
 CMD python hello-world.py
 ```
 
