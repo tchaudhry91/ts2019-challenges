@@ -16,9 +16,9 @@ cd /vagrant/challanges/devops/monitoring
   - `kubectl --namespace=ts2019-mon create -f deploy-hashers.yml`</br>
     These 2 services are already exporting prometheus metrics at the `/metrics` endpoint.
 
-2. Create a prometheus config to gather metrics from these two endpoints. A sample config has been provided under `config/prometheus.yml`. The sample config has already been asked to scrape from both services.
+2. A prometheus config has been created to gather metrics from these two endpoints. A sample config has been provided under `config/prometheus.yml`. The sample config has already been asked to scrape from both services.
 
-3. Once the changes have been made, run the following command to put the config on the cluster:
+3. Run the following command to put the config on the cluster:
 
   - `kubectl --namespace=ts2019-mon create configmap prom-config --from-file config/prometheus.yml`
 
@@ -36,7 +36,7 @@ cd /vagrant/challanges/devops/monitoring
 
 The setup is now complete and you can now explore what prometheus can offer us in such a scenario. Give this a couple of minutes for the metrics to take shape. Head over to http://192.168.33.10:30001/graph and explore the available metrics! The interesting ones for the challenge with begin with the prefix microservices.
 
-#### The challenge answer is the combination of the 3 answers below separated by hyphens</br>(e.g : FLAG = `red-15-0.02`).
+#### The challenge answer is the combination of the 3 answers below separated by hyphens</br>(e.g : FLAG = `red-15-0.2`).
 
  - **Which service is performing faster? (blue/red)**
  - **By how much is it out-performing the other service?**</br>
