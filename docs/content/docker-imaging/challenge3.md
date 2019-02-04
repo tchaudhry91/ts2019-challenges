@@ -7,6 +7,8 @@ weight = 15
 ```
 ssh devops
 cd /vagrant/challanges/devops/docker-imaging/intermediate-challenge-2/
+cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -
+source /vagrant/challanges/devops/docker-imaging/enable_validator.sh
 ./start.sh
 ```
 
@@ -64,4 +66,3 @@ Re-check the size of your image and post the output:
 `tsvalidator validate docker chal3 --image hello-worlds-python:slim`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
-

@@ -9,15 +9,12 @@ weight = 5
 ```
 ssh devops
 cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/
+cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -
+source /vagrant/challanges/devops/docker-imaging/enable_validator.sh
 ./start.sh
 ```
 
-First a little bit of setup, run the following command to get a local pypi server that will serve dependencies for our app:
-`cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -`
-
-And enable the validator : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
-
-Now, let's dockerize a hello-world app! Go to the 
+Now, let's dockerize a hello-world app! Go to the
 ```
 cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/python-hello-world/
 ```
@@ -46,7 +43,7 @@ So, we already have a base image with everything python needs to run in it. Let'
 What's left? We have the interpreter, we have the code. Let's `RUN` the dependency gathering.
 (Note: This app doesn't really need the dependency, but we've put it in here to explain the RUN command)
 
-`RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt`
+`RUN pip install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt`
 
 Now, tell the container what `COMMAND` to run when it's started.
 
@@ -57,7 +54,7 @@ Here's what the final Dockerfile should look like!
 ```Docker
 FROM localhost:32000/python:3
 COPY . .
-RUN pip --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
+RUN pip install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt
 CMD python hello-world.py
 ```
 
@@ -72,6 +69,7 @@ If you completed the above step, you should now be ready to `RUN` your container
 `docker run -it --rm hello-world-python`
 
 And voilà,  "Hello, World" from a container!
+
 Notice the difference in the output when running inside a container?
 
 

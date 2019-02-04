@@ -16,7 +16,7 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
 
 3. If you are new to Jenkins please refer to Appendix1 and Appendix2 at the end.
 
-4. create a new Jenkins job with the following 4 stages
+4. _**Overview of Challenge1**_: create a new Jenkins job with the following 4 stages
   - Create output directory
   - Create a file in the directory and write some text
         - Change directory
@@ -27,7 +27,7 @@ Let's start with developing a Jenkins job using scripted pipeline. Pipelines are
     _**Note:**_ If you are already aware of jenkins and are able to write the code without any help jump to step7.
 
 5. To create a new job go to [Jenkins](http://192.168.33.10/).
-  - On top right corner click on `New Item`
+  - On top left corner click on `New Item`
   - Enter `testpipe` as job name
   - select `pipeline` from the list below
   - click `ok` button at the bottom
