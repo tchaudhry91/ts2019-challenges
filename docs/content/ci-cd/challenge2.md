@@ -14,7 +14,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
     - `cd /vagrant/challanges/devops/ci-cd`
     - `./start.sh`
 
-3. Create a Jenkins job with the following stages:
+3. _**Overview of Challenge2**_:Create a Jenkins job with the following stages:
 
   - Create 2 output directories
   - Create 2 files in each directory
@@ -32,7 +32,7 @@ You should already be familiar with writing a Jenkinsfile (i.e. pipeline script)
   - Pass the string variable from previous step to hudson.util.Secret.decrypt() function, and print the output to console
 
 4. To create a new job go to [Jenkins](http://192.168.33.10/).
-  - On top right corner click on `New Item`
+  - On top left corner click on `New Item`
   - Enter `parpipe` as job name
   - select `pipeline` from the list below
   - click `ok` button at the bottom
