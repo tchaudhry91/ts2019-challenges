@@ -21,4 +21,4 @@ kubectl get --no-headers=true pods -l name=sminion -o custom-columns=:metadata.n
 
 # register minions
 kubectl exec smaster-0 -- salt-key -L
-kubectl exec -it smaster-0 -- salt-key -A
+kubectl exec -it smaster-0 -- salt-key -A -y
