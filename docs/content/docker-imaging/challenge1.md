@@ -9,15 +9,12 @@ weight = 5
 ```
 ssh devops
 cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/
+cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -
+source /vagrant/challanges/devops/docker-imaging/enable_validator.sh
 ./start.sh
 ```
 
-First a little bit of setup, run the following command to get a local pypi server that will serve dependencies for our app:
-`cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -`
-
-And enable the validator : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
-
-Now, let's dockerize a hello-world app! Go to the 
+Now, let's dockerize a hello-world app! Go to the
 ```
 cd /vagrant/challanges/devops/docker-imaging/beginner-challenge-1/python-hello-world/
 ```

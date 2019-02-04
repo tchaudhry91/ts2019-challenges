@@ -7,12 +7,14 @@ weight = 10
 ```
 ssh devops
 cd /vagrant/challanges/devops/docker-imaging/intermediate-challenge-1
+cd /vagrant/challanges/devops/docker-imaging/setup/pypi/ && ./start.sh && cd -
+source /vagrant/challanges/devops/docker-imaging/enable_validator.sh
 ./start.sh
 ```
 
 ### Managing Docker image layers
 
-So, you built a working docker image in the previous challenge. Some random people on the internet complained about inefficient layer management and what not. But what do they know!? The container works! 
+So, you built a working docker image in the previous challenge. Some random people on the internet complained about inefficient layer management and what not. But what do they know!? The container works!
 Meanwhile, there's been a discovery. We are not alone. Aliens have been found. And our "Hello World" is no longer appropriate. The developers have scrammed and pushed out a patch to make the app say "Hello Worlds!" instead.
 They want you to rebuild and redeploy the container.
 Easy stuff.
@@ -49,4 +51,3 @@ HINT: Try copying your app into the container in 2 different steps.
 `tsvalidator validate docker chal2 --image hello-worlds-python`
 
 NOTE: If you didn't complete this step in the first challenge, enable the validator now : `source /vagrant/challanges/devops/docker-imaging/enable_validator.sh`
-
