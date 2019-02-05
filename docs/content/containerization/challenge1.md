@@ -130,7 +130,7 @@ The service type we created was of type `NodePort`, which means that every
 machine which is part of the Kubernetes cluster forwards traffic received on
 port `32644` to the Kubernetes Service we just created.
 
-In another terminal window, run this to verify that you can access the service:
+In another terminal window do `ssh devops` and run this to verify that you can access the service:
 `watch -d curl -s http://localhost:32644`. You will have to replace `32644` with
 the port number that you saw in the output.
 
