@@ -77,6 +77,12 @@ If you've completed the first challenge, then this should be simple to follow.
           - name: app1
             image: localhost:32000/saykumar/ts2019:l2s1
 
+Run
+
+```
+kubectl apply -f deployment-app1.yaml
+```
+
 Watch the output of `kubectl get pods` to know when the containers are ready.
 
 Now that we have the container up, we need Nginx to point to these containers.
@@ -98,6 +104,12 @@ Create a file `service-app1.yaml` as shown below:
         port: 8080
         targetPort: 8080
 
+Run
+
+```
+kubectl apply -f service-app1.yaml
+```
+
 Note that we no longer use `type: LoadBalancer` or `type: NodePort`, but
 specify a type which is only accessible from within the cluster, `type:
    ClusterIP`. This is because we won't expose the application directly to the
@@ -118,6 +130,13 @@ Now we come to the ingress rule. Write this into a file `ingress-app1.yaml`:
             backend:
               serviceName: app1
               servicePort: 8080
+
+Run
+
+```
+kubectl apply -f ingress-app1.yaml
+```
+
 
 This instructs Nginx (which is an `ingress controller` in k8s terminology) to
 point requests to `/hello` to the service `app1` that we defined above.
@@ -159,6 +178,13 @@ Open up your editor and create a file `deployment-app2.yaml` as shown below.
           - name: app2
             image: localhost:32000/saykumar/ts2019:l2s2
 
+Run
+
+```
+kubectl apply -f deployment-app2.yaml
+```
+
+
 Watch the output of `kubectl get pods` to know when the containers are ready.
 
 Create a file `service-app2.yaml` as shown below:
@@ -176,6 +202,12 @@ Create a file `service-app2.yaml` as shown below:
         port: 8080
         targetPort: 8080
 
+Run
+
+```
+kubectl apply -f service-app2.yaml
+```
+
 Now we come to the ingress rule. Write this into a file `ingress-app2.yaml`:
 
     apiVersion: extensions/v1beta1
@@ -190,6 +222,12 @@ Now we come to the ingress rule. Write this into a file `ingress-app2.yaml`:
             backend:
               serviceName: app2
               servicePort: 8080
+
+Run
+
+```
+kubectl apply -f ingress-app2.yaml
+```
 
 This instructs Nginx (which is an `ingress controller` in k8s terminology) to
 point requests to `/hello` to the service `app2` that we defined above.
