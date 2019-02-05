@@ -35,7 +35,7 @@ Tcpdump is a common packet analyzer that runs under the command line. It allows 
 
 Hint: use `tcpdump -nn` with verbose to find header value
 
-Your code will be seen in the output of `tcpdump` command. Use only header field value without fileld name.
+Your code will be seen in the output of `tcpdump` command. Use only header field value (e.g key: value) without fileld name.
 
 
 <a href="https://ctf.ts2019.adobe.com/challenges#OpsToolKit2" target="_blank">Link to enter flag </a> 
