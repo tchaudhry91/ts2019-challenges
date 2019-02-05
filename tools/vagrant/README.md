@@ -29,6 +29,27 @@ Host devops
    Port 22
 ```
 
+### Deploy on mac
+
+* Download/install most recent VirtualBox https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg
+* Download/install most recent vagrant https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.dmg
+* `brew install hugo && cd <repo directory>/docs/  && hugo server --gc –disableFastRender && open http://localhost:1313`
+* Run vagrant box add --name laptop https://s3-us-west-2.amazonaws.com/ts2019-ops/laptop.box
+* `cd ts2019-challenges/`
+* `vagrant up` 
+* Modify ~/.ssh/config,  to be able to ssh with `ssh devops`
+
+```
+Host devops
+   User vagrant
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+   IdentityFile ~/.vagrant.d/boxes/laptop/0/virtualbox/vagrant_private_key
+   Hostname 192.168.33.10
+   Port 22
+```
+
+
 System will be ready to use after completing these steps. Now user can start playing with kubernetes:
 
 1. Login to the vagrant box, `ssh devops` 
