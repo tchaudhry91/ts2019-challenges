@@ -44,7 +44,19 @@ Our `requirements.txt` never changes. Only our `hello-worlds.py` changes. Is the
 
 #### TASK: Change the Dockerfile so that subsequent changes to the code are built quickly and do not have to gather the requirements every time!
 
-HINT: Try copying your app into the container in 2 different steps.
+The final docker file should look like this:
+
+```
+FROM localhost:32000/python:3
+
+COPY ____________
+RUN pip install --index http://172.17.0.1:32001/simple --trusted-host 172.17.0.1 -r requirements.txt 
+COPY . .
+CMD python hello-worlds.py
+```
+
+Fill in the blank in the COPY statement on line 3.
+
 
 #### FLAG:
 
